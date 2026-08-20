@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hotsite do TCC MatchPoint: pesquisa, arquitetura, prototipação e desenvolvimento de uma plataforma esportiva.">
-  <meta name="theme-color" content="#0a1f34">
-  <title>MatchPoint TCC — Projeto acadêmico</title>
+  <meta name="description" content="Apresentação acadêmica do TCC MatchPoint: problema, objetivos, solução, metodologia, protótipo, escopo, equipe e documentação.">
+  <meta name="theme-color" content="#071b2d">
+  <title>MatchPoint TCC — Apresentação do projeto</title>
   <link rel="icon" type="image/png" href="../assets/icone.png">
   <link rel="apple-touch-icon" href="../assets/icone.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,136 +13,235 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
-  <link rel="stylesheet" href="style.css?v=5">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=11">
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="lp-header">
-    <div class="lp-nav wrap">
-      <a class="logo" href="#inicio" aria-label="MatchPoint, início">
-        <img class="logo-image" src="../assets/logoCompleta.png" alt="" width="300" height="211">
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="site-logo" href="#inicio" aria-label="MatchPoint TCC, início">
+        <img src="../assets/logoCompleta.png" alt="" width="300" height="211">
       </a>
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#produto">Sobre o TCC</a>
-        <a href="#arquitetura">Arquitetura</a>
-        <a href="#publicos">Escopo</a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#visao-geral">Visão geral</a>
+        <a href="#projeto">Projeto</a>
+        <a href="#prototipo">Protótipo</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#documento">Documento</a>
       </nav>
-      <div class="nav-actions">
-        <a class="hotsite-link" href="../index.html">Conhecer o produto <span>↗</span></a>
-        <a class="pill pill-small" href="../index.html">Ver landing page</a>
-      </div>
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+      <a class="header-link" href="../index.html">Ver o aplicativo <span aria-hidden="true">↗</span></a>
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </div>
-    <nav class="mobile-menu" aria-label="Menu móvel" aria-hidden="true">
-      <a href="#produto">Sobre o TCC</a>
-      <a href="#arquitetura">Arquitetura</a>
-      <a href="#publicos">Escopo</a>
-      <a class="pill" href="../index.html">Ver landing page</a>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação móvel" aria-hidden="true">
+      <a href="#visao-geral">Visão geral</a>
+      <a href="#projeto">Projeto</a>
+      <a href="#prototipo">Protótipo</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#documento">Documento</a>
+      <a class="button" href="../index.html">Ver landing page</a>
     </nav>
   </header>
 
   <main id="conteudo">
-    <section class="lp-hero" id="inicio" aria-labelledby="lp-title">
-      <div class="hero-grid wrap">
-        <div class="hero-message reveal shown">
-          <span class="kicker"><i></i> TCC · Desenvolvimento de Sistemas</span>
-          <h1 id="lp-title">Esporte, tecnologia e <em>impacto.</em></h1>
-          <p>Um Trabalho de Conclusão de Curso que investiga como a tecnologia pode organizar o encontro entre talentos esportivos e oportunidades.</p>
-          <div class="hero-buttons">
-            <a class="pill" href="#produto">Conhecer o TCC <span>↗</span></a>
-            <a class="ghost-action" href="../index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Ver a landing page</a>
-          </div>
-          <div class="hero-proof">
-            <div class="proof-avatars" aria-hidden="true"><span>L</span><span>L</span><span>M</span><span>M</span><span>R</span></div>
-            <p><strong>Laura, Lucas, Marcelo, Maria e Renato.</strong><br>Turma TDS2 · Projeto em desenvolvimento.</p>
+    <section class="tcc-hero" id="inicio" aria-labelledby="hero-title">
+      <img class="hero-background" src="../assets/matchpoint-hero.webp" alt="Atletas de tênis em uma composição esportiva" width="1717" height="916" fetchpriority="high">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-court" aria-hidden="true"><span></span><span></span></div>
+
+      <div class="container hero-content">
+        <div class="hero-copy reveal shown">
+          <span class="eyebrow light"><i></i> Trabalho de Conclusão de Curso · TDS2</span>
+          <h1 id="hero-title">MatchPoint.<br><em>Do problema ao protótipo.</em></h1>
+          <p>Uma apresentação digital sobre a pesquisa, as decisões e a arquitetura de uma plataforma criada para organizar o encontro entre talentos esportivos e oportunidades.</p>
+          <div class="hero-actions">
+            <a class="button" href="#visao-geral">Iniciar apresentação <span aria-hidden="true">↓</span></a>
+            <a class="text-link light-link" href="#documento"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Acessar documento</a>
           </div>
         </div>
 
-        <div class="hero-stage reveal shown" aria-label="Demonstração visual do protótipo do TCC MatchPoint">
-          <div class="photo-frame">
-            <img src="../assets/matchpoint-hero.webp" alt="Atletas de tênis em uma composição esportiva" width="1717" height="916" fetchpriority="high">
-            <span class="photo-caption">TDS2 · Projeto em desenvolvimento · 2026</span>
-          </div>
-          <article class="match-card">
-            <div class="match-card-top"><span><i></i> Escopo mapeado</span><b>TCC–038</b></div>
-            <div class="match-value"><strong>38</strong><sup>telas</sup><span>documentadas</span></div>
-            <div class="match-info"><span>Protótipo navegável</span><strong>Atleta × Treinador × Instituição</strong></div>
-            <div class="match-line"><i></i></div>
-          </article>
-          <div class="orbit-card" aria-hidden="true"><span>Pesquisa</span><i>→</i><span>UX</span><i>→</i><span>Desenvolvimento</span></div>
-          <div class="hero-disc" aria-hidden="true"><span>MP</span></div>
-        </div>
+        <aside class="hero-summary reveal shown" aria-label="Resumo do projeto">
+          <span class="summary-label">Escopo documentado</span>
+          <div class="summary-number"><strong>38</strong><span>telas<br>principais</span></div>
+          <div class="summary-items"><span>05 perfis</span><span>05 fluxos</span><span>01 caso central</span></div>
+          <p>Tênis como modalidade inicial. Arquitetura preparada para demonstrar a jornada completa do sistema.</p>
+        </aside>
       </div>
-      <div class="hero-rail" aria-hidden="true"><span>Pesquisa</span><i></i><span>Requisitos</span><i></i><span>Arquitetura</span><i></i><span>Protótipo</span><i></i><span>Validação</span></div>
-    </section>
 
-    <section class="promise" id="produto" aria-labelledby="promise-title">
-      <div class="wrap">
-        <div class="promise-heading reveal">
-          <span class="section-index">01 / Sobre o TCC</span>
-          <div><h2 id="promise-title">Da pesquisa ao protótipo.<br><em>Um sistema de ponta a ponta.</em></h2></div>
-          <p>O projeto reúne levantamento do problema, definição de requisitos, arquitetura de informação, regras de negócio e prototipação de uma solução digital.</p>
-        </div>
-        <div class="promise-grid">
-          <article class="promise-card reveal"><span>01</span><span class="line-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></span><h3>Problema de pesquisa</h3><p>Investigar a fragmentação do acesso a oportunidades e dos processos de avaliação no esporte.</p></article>
-          <article class="promise-card card-blue reveal"><span>02</span><span class="line-icon" aria-hidden="true"><i class="fa-solid fa-sitemap"></i></span><h3>Modelagem do sistema</h3><p>Trinta e oito telas, múltiplos perfis, regras de segurança e fluxos completos já documentados.</p></article>
-          <article class="promise-card reveal"><span>03</span><span class="line-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span><h3>Protótipo e desenvolvimento</h3><p>Uma experiência navegável para demonstrar as principais jornadas e validar a proposta do TCC.</p></article>
-        </div>
+      <div class="container hero-meta" aria-hidden="true">
+        <span>Desenvolvimento de Sistemas</span><span>Projeto acadêmico · 2026</span><span>Conectando talentos às oportunidades</span>
       </div>
     </section>
 
-    <section class="product-window" id="arquitetura" aria-labelledby="window-title">
-      <div class="wrap product-intro reveal">
-        <div><span class="kicker light"><i></i> Arquitetura documentada</span><h2 id="window-title">Um ecossistema digital<br><em>pronto para demonstrar.</em></h2></div>
-        <p>O protótipo materializa a arquitetura do projeto e conecta acesso, perfis, oportunidades, candidaturas, avaliações e acompanhamento em jornadas coerentes.</p>
+    <nav class="chapter-nav" aria-label="Capítulos da apresentação">
+      <div class="container chapter-inner">
+        <span>Apresentação</span>
+        <a href="#visao-geral"><b>01</b> Visão geral</a>
+        <a href="#projeto"><b>02</b> Problema e objetivos</a>
+        <a href="#solucao"><b>03</b> Solução</a>
+        <a href="#processo"><b>04</b> Processo</a>
+        <a href="#prototipo"><b>05</b> Protótipo</a>
+        <a href="#escopo"><b>06</b> Escopo</a>
+        <a href="#documento"><b>07</b> Documento</a>
       </div>
-      <div class="wrap platform-shell reveal">
-        <div class="platform-bar"><div><i></i><i></i><i></i></div><span>protótipo.matchpoint / tela-11</span><b>TCC</b></div>
-        <div class="platform-body">
-          <aside class="platform-side">
-            <a class="logo mini" href="#inicio" aria-label="MatchPoint"><img class="logo-icon" src="../assets/icone.png" alt="" width="220" height="242"></a>
-            <span class="side-active" aria-label="Início"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span aria-label="Explorar"><i class="fa-solid fa-compass" aria-hidden="true"></i></span><span aria-label="Documentos"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span><span aria-label="Perfil"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
-          </aside>
-          <div class="platform-content">
-            <div class="platform-welcome"><div><small>Olá, Ana Clara</small><h3>Seu próximo ponto começa aqui.</h3></div><button type="button" aria-label="Notificações"><i class="fa-solid fa-bell" aria-hidden="true"></i></button></div>
-            <div class="platform-stats"><article><span>Ranking regional</span><strong>#24</strong><small><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 3 posições</small></article><article><span>Perfil esportivo</span><strong>92%</strong><small>Quase completo</small></article><article class="lime-stat"><span>Melhor combinação</span><strong>94%</strong><small>Excelente</small></article></div>
-            <div class="opportunity-head"><h4>Oportunidades para você</h4><span>Ver todas →</span></div>
-            <div class="opportunity-card"><div class="opportunity-art"><i></i></div><div><small>Bolsa esportiva</small><strong>Apoio Circuito Juvenil</strong><p>Move Sports · São Paulo, SP</p><span>Inscrição + transporte</span></div><div class="opportunity-score"><strong>94%</strong><small>Match</small></div></div>
+    </nav>
+
+    <section class="overview section" id="visao-geral" aria-labelledby="overview-title">
+      <div class="container section-heading overview-heading reveal">
+        <span class="section-number">01 / Visão geral</span>
+        <div><span class="eyebrow"><i></i> O projeto em um minuto</span><h2 id="overview-title">Uma plataforma para transformar <em>oportunidade dispersa em jornada organizada.</em></h2></div>
+      </div>
+      <div class="container overview-grid">
+        <article class="overview-card reveal"><span>O desafio</span><h3>O acesso depende de redes, indicações e contatos pessoais.</h3><p>Atletas têm dificuldade para localizar treinamentos, bolsas, avaliações, transporte, equipamentos e inscrições.</p></article>
+        <article class="overview-card highlight reveal"><span>A proposta</span><h3>Reunir perfis, oportunidades e processos em um único fluxo.</h3><p>O MatchPoint organiza descoberta, compatibilidade, candidatura, avaliação, seleção e registro do apoio.</p></article>
+        <article class="overview-card reveal"><span>A entrega</span><h3>Uma arquitetura completa para prototipação e demonstração.</h3><p>O documento descreve 38 telas, regras de negócio, estados, conexões e casos prioritários.</p></article>
+      </div>
+      <div class="container overview-stats reveal">
+        <span><strong>5</strong> perfis conectados</span><span><strong>38</strong> telas documentadas</span><span><strong>5</strong> fluxos de ponta a ponta</span><span><strong>1</strong> modalidade inicial</span>
+      </div>
+    </section>
+
+    <section class="team-banner" id="equipe" aria-labelledby="team-title">
+      <a class="team-banner-link" href="equipe/index.html" aria-label="Conhecer os integrantes e suas funções no projeto">
+        <div class="team-image" aria-hidden="true"></div>
+        <div class="team-shade" aria-hidden="true"></div>
+        <div class="container team-content reveal">
+          <span class="section-number light-number">Equipe / TDS2</span>
+          <div class="team-main-copy">
+            <span class="eyebrow light"><i></i> Quem constrói o MatchPoint</span>
+            <h2 id="team-title">Cinco integrantes.<br><em>Uma visão compartilhada.</em></h2>
+            <p>Laura Flôr, Lucas Robson, Marcelo Claudino, Maria Paes e Renato José.</p>
           </div>
-          <aside class="platform-insight"><span>CASO DE DEMONSTRAÇÃO</span><strong>Fluxo central do TCC</strong><div><i style="--w:100%"></i><small>Perfil e oportunidade</small></div><div><i style="--w:96%"></i><small>Match Score e candidatura</small></div><div><i style="--w:88%"></i><small>Avaliação e apoio</small></div><a href="../index.html#match-score">Ver o Match Score na landing →</a></aside>
+          <div class="team-callout"><span>Conhecer a equipe e as funções</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
+          <small class="photo-pending"><i class="fa-solid fa-image" aria-hidden="true"></i> A foto oficial da turma será aplicada neste banner.</small>
+        </div>
+      </a>
+    </section>
+
+    <section class="project section" id="projeto" aria-labelledby="project-title">
+      <div class="container section-heading reveal">
+        <span class="section-number">02 / Problema e objetivos</span>
+        <div><span class="eyebrow"><i></i> Por que o MatchPoint?</span><h2 id="project-title">O problema não é a falta de talento.<br><em>É a falta de conexão organizada.</em></h2></div>
+      </div>
+
+      <div class="container problem-layout">
+        <article class="problem-copy reveal">
+          <span class="content-label">Contexto</span>
+          <p class="lead-text">As oportunidades esportivas ficam espalhadas em redes sociais, indicações e contatos pessoais. Isso reduz o alcance, dificulta a comparação de critérios e torna o processo pouco transparente.</p>
+          <p>Treinadores e instituições também enfrentam dificuldades para divulgar oportunidades, analisar candidatos, solicitar avaliações e acompanhar o apoio concedido.</p>
+        </article>
+        <blockquote class="research-question reveal"><span>Questão orientadora</span>Como uma plataforma digital pode organizar a conexão entre talentos esportivos e oportunidades, preservando critérios claros, segurança e decisão humana?</blockquote>
+      </div>
+
+      <div class="container objective-layout">
+        <article class="general-objective reveal"><span class="content-label">Objetivo geral</span><h3>Estruturar uma plataforma que conecte atletas, treinadores e instituições em uma jornada única, compreensível e rastreável.</h3></article>
+        <article class="specific-objectives reveal"><span class="content-label">Objetivos específicos</span><ul><li>Centralizar perfis e oportunidades esportivas.</li><li>Organizar candidaturas, avaliações e decisões.</li><li>Explicar a compatibilidade pelo Match Score.</li><li>Registrar apoio, impacto e histórico.</li><li>Proteger atletas menores e dados sensíveis.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="solution section dark-section" id="solucao" aria-labelledby="solution-title">
+      <div class="container section-heading reveal">
+        <span class="section-number light-number">03 / Solução proposta</span>
+        <div><span class="eyebrow light"><i></i> Ecossistema MatchPoint</span><h2 id="solution-title">Responsabilidades separadas.<br><em>Jornadas conectadas.</em></h2></div>
+      </div>
+
+      <div class="container role-grid">
+        <article class="role-card reveal"><span>01</span><i class="fa-solid fa-person-running" aria-hidden="true"></i><h3>Atleta</h3><p>Constrói o perfil esportivo, encontra oportunidades e acompanha candidaturas.</p></article>
+        <article class="role-card reveal"><span>02</span><i class="fa-solid fa-people-roof" aria-hidden="true"></i><h3>Responsável</h3><p>Administra as ações do atleta menor diretamente pela conta vinculada.</p></article>
+        <article class="role-card reveal"><span>03</span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i><h3>Treinador</h3><p>Publica oportunidades técnicas e registra avaliações solicitadas.</p></article>
+        <article class="role-card reveal"><span>04</span><i class="fa-solid fa-building-columns" aria-hidden="true"></i><h3>Instituição</h3><p>Oferece apoio, analisa candidatos, decide e registra o impacto.</p></article>
+        <article class="role-card reveal"><span>05</span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><h3>Administrador</h3><p>Verifica cadastros, modera o sistema e audita regras e cálculos.</p></article>
+      </div>
+
+      <div class="container core-flow reveal">
+        <div><span class="content-label light-label">Fluxo central da demonstração</span><h3>Da publicação ao registro do apoio.</h3></div>
+        <ol><li><b>01</b><span>Move Sports publica</span></li><li><b>02</b><span>Ana Clara recebe 94%</span></li><li><b>03</b><span>Responsável candidata</span></li><li><b>04</b><span>Treinador avalia</span></li><li><b>05</b><span>Instituição aprova</span></li></ol>
+      </div>
+    </section>
+
+    <section class="process section" id="processo" aria-labelledby="process-title">
+      <div class="container section-heading reveal">
+        <span class="section-number">04 / Processo do projeto</span>
+        <div><span class="eyebrow"><i></i> Do estudo à demonstração</span><h2 id="process-title">Uma sequência lógica.<br><em>Cada decisão sustenta a próxima.</em></h2></div>
+      </div>
+      <ol class="container process-list">
+        <li class="reveal"><span>01</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><div><small>Compreender</small><h3>Problema e públicos</h3><p>Delimitação do contexto e identificação das necessidades dos usuários.</p></div></li>
+        <li class="reveal"><span>02</span><i class="fa-solid fa-list-check" aria-hidden="true"></i><div><small>Definir</small><h3>Requisitos e regras</h3><p>Documentação de critérios, responsabilidades, estados e restrições.</p></div></li>
+        <li class="reveal"><span>03</span><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><div><small>Organizar</small><h3>Arquitetura e fluxos</h3><p>Conexão das telas em jornadas completas para cada perfil.</p></div></li>
+        <li class="reveal"><span>04</span><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><div><small>Materializar</small><h3>Interface e protótipo</h3><p>Transformação das regras em telas e interações demonstráveis.</p></div></li>
+        <li class="reveal"><span>05</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><small>Validar</small><h3>Fluxos prioritários</h3><p>Revisão da coerência entre problema, solução, regras e experiência.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="prototype section" id="prototipo" aria-labelledby="prototype-title">
+      <div class="container prototype-heading reveal">
+        <div><span class="section-number">05 / Protótipo</span><span class="eyebrow"><i></i> Caso de demonstração</span><h2 id="prototype-title">A arquitetura ganha forma<br><em>em uma experiência navegável.</em></h2></div>
+        <p>O protótipo demonstra como perfil, oportunidade, Match Score, candidatura, avaliação técnica e decisão institucional funcionam como partes do mesmo processo.</p>
+      </div>
+
+      <div class="container prototype-frame reveal">
+        <div class="browser-bar"><span><i></i><i></i><i></i></span><b>prototipo.matchpoint / atleta / início</b><small>TCC</small></div>
+        <div class="prototype-body">
+          <aside class="prototype-sidebar"><img src="../assets/icone.png" alt="" width="220" height="242"><i class="fa-solid fa-house active" aria-hidden="true"></i><i class="fa-solid fa-compass" aria-hidden="true"></i><i class="fa-solid fa-file-lines" aria-hidden="true"></i><i class="fa-solid fa-user" aria-hidden="true"></i></aside>
+          <div class="prototype-content">
+            <header><div><small>Olá, Ana Clara</small><h3>Seu próximo ponto começa aqui.</h3></div><i class="fa-solid fa-bell" aria-hidden="true"></i></header>
+            <div class="prototype-metrics"><article><span>Ranking regional</span><strong>#24</strong><small>+3 posições</small></article><article><span>Perfil esportivo</span><strong>92%</strong><small>Quase completo</small></article><article class="metric-highlight"><span>Melhor combinação</span><strong>94%</strong><small>Match excelente</small></article></div>
+            <div class="opportunity"><div class="opportunity-art" aria-hidden="true"></div><div><small>Bolsa esportiva</small><h4>Apoio Circuito Juvenil</h4><p>Move Sports · São Paulo, SP</p><span>Inscrição + transporte</span></div><strong>94%</strong></div>
+          </div>
+          <aside class="prototype-notes"><span>Caso central</span><h3>O que a tela demonstra</h3><ul><li>Perfil e dados esportivos</li><li>Oportunidade recomendada</li><li>Match Score explicável</li><li>Próxima ação clara</li></ul><a href="../index.html#match-score">Ver o Match Score na landing ↗</a></aside>
         </div>
       </div>
-      <div class="window-link wrap reveal"><p>Esta interface representa uma das jornadas documentadas para o protótipo.</p><a class="pill" href="../index.html">Ver a landing page <span>↗</span></a></div>
     </section>
 
-    <section class="audiences" id="publicos" aria-labelledby="audiences-title">
-      <div class="wrap audiences-heading reveal"><span class="section-index">02 / Escopo da entrega</span><h2 id="audiences-title">Etapas organizadas.<br><em>Entregas conectadas.</em></h2></div>
-      <div class="wrap audience-list">
-        <article class="audience-row reveal"><span class="row-number">01</span><div class="row-letter">P</div><div><small>PESQUISA E REQUISITOS</small><h3>Do problema às regras do sistema.</h3><p>Definição dos perfis, necessidades, critérios, fluxos e requisitos de segurança.</p></div><span class="row-action" aria-hidden="true">01</span></article>
-        <article class="audience-row reveal"><span class="row-number">02</span><div class="row-letter">U</div><div><small>EXPERIÊNCIA DO USUÁRIO</small><h3>Da arquitetura ao protótipo navegável.</h3><p>Organização das jornadas do atleta, treinador, instituição e administrador.</p></div><span class="row-action" aria-hidden="true">02</span></article>
-        <article class="audience-row reveal"><span class="row-number">03</span><div class="row-letter">D</div><div><small>DESENVOLVIMENTO</small><h3>Do protótipo ao produto digital.</h3><p>Implementação progressiva dos fluxos prioritários definidos para a primeira entrega.</p></div><span class="row-action" aria-hidden="true">03</span></article>
+    <section class="scope section" id="escopo" aria-labelledby="scope-title">
+      <div class="container section-heading reveal">
+        <span class="section-number">06 / Escopo e limites</span>
+        <div><span class="eyebrow"><i></i> O que a primeira entrega precisa provar</span><h2 id="scope-title">Escopo congelado.<br><em>Prioridades bem definidas.</em></h2></div>
+      </div>
+      <div class="container scope-layout">
+        <div class="scope-list reveal">
+          <article><span>01</span><p>Cadastro do atleta maior e do atleta menor com responsável obrigatório.</p></article>
+          <article><span>02</span><p>Home, oportunidades, Match Score, candidatura e acompanhamento.</p></article>
+          <article><span>03</span><p>Cadastro e jornada profissional do treinador.</p></article>
+          <article><span>04</span><p>Cadastro da instituição, criação de oportunidade e seleção.</p></article>
+          <article><span>05</span><p>Avaliação técnica e verificação administrativa.</p></article>
+        </div>
+        <aside class="rules-card reveal"><span class="content-label">Regras que não mudam</span><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i> O Match Score auxilia, mas não decide.</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> O responsável administra o atleta menor.</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Perfis profissionais passam por verificação.</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> O sistema não realiza pagamentos reais.</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Alterações importantes mantêm histórico.</li></ul></aside>
+      </div>
+      <div class="container scope-metrics reveal"><span><strong>38</strong> telas</span><span><strong>05</strong> perfis</span><span><strong>05</strong> fluxos</span><span><strong>01</strong> caso central</span></div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="container closing-content reveal">
+        <span class="eyebrow"><i></i> Síntese</span>
+        <h2 id="closing-title">O MatchPoint conecta o início, o desenvolvimento e o fim <em>de uma oportunidade esportiva.</em></h2>
+        <p>O projeto estabelece uma base coerente para apresentar a proposta, validar os fluxos e orientar as próximas etapas de desenvolvimento.</p>
       </div>
     </section>
 
-    <section class="result-banner" id="resultados" aria-labelledby="result-title">
-      <div class="result-lines" aria-hidden="true"></div>
-      <div class="wrap result-content">
-        <div class="reveal"><span class="kicker"><i></i> Projeto em desenvolvimento</span><h2 id="result-title">Uma base pronta para receber <em>o conteúdo definitivo.</em></h2></div>
-        <div class="result-side reveal"><div class="mini-results"><article><strong data-count="38">0</strong><span>telas mapeadas</span></article><article><strong data-count="5">0</strong><span>fluxos principais</span></article></div><a class="pill dark" href="../index.html">Acessar a landing page <span>↗</span></a><small>Conteúdo provisório baseado no escopo atual do TCC.</small></div>
+    <section class="document section dark-section" id="documento" aria-labelledby="document-title">
+      <div class="container document-layout">
+        <div class="document-copy reveal">
+          <span class="section-number light-number">07 / Documento</span>
+          <span class="eyebrow light"><i></i> Material completo do projeto</span>
+          <h2 id="document-title">Consulte a ideia, as telas<br><em>e toda a lógica do sistema.</em></h2>
+          <p>O documento reúne os perfis, regras, 38 telas, modais, estados, conexões e fluxos necessários para orientar o Figma e o desenvolvimento do TCC.</p>
+          <div class="document-info"><span><strong>PDF</strong> formato</span><span><strong>28</strong> páginas</span><span><strong>0,49 MB</strong> tamanho</span></div>
+          <div class="document-actions"><a class="button" href="../assets/documentos/MatchPoint_Documento_TCC.pdf" download="MatchPoint_Documento_TCC.pdf"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Baixar documento</a><a class="text-link light-link" href="../assets/documentos/MatchPoint_Documento_TCC.pdf" target="_blank" rel="noopener">Visualizar no navegador <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <article class="document-cover reveal" aria-label="Capa do documento MatchPoint"><span>TCC · TDS2</span><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><div><small>DOCUMENTO DO PROJETO</small><strong>MatchPoint</strong><p>Ideia, telas e lógica completa do sistema</p></div><footer><span>28 páginas</span><span>2026</span></footer></article>
       </div>
     </section>
   </main>
 
-  <footer class="lp-footer">
-    <div class="wrap footer-main">
-      <a class="logo" href="#inicio" aria-label="MatchPoint, início"><img class="logo-image" src="../assets/logoCompleta.png" alt="" width="300" height="211" loading="lazy"></a>
-      <p>Laura Flôr, Lucas Robson, Marcelo Claudino, Maria Paes e Renato José.</p>
-      <div class="footer-links"><a href="../index.html">Landing page</a><a href="#produto">Sobre o TCC</a><a href="#arquitetura">Arquitetura</a><a href="#publicos">Escopo</a></div>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="site-logo footer-logo" href="#inicio" aria-label="MatchPoint TCC, voltar ao início"><img src="../assets/logoCompleta.png" alt="" width="300" height="211"></a>
+      <p>Trabalho de Conclusão de Curso · Desenvolvimento de Sistemas · TDS2.</p>
+      <nav aria-label="Navegação do rodapé"><a href="#visao-geral">Visão geral</a><a href="#projeto">Projeto</a><a href="equipe/index.html">Equipe</a><a href="#documento">Documento</a><a href="../index.html">Landing page</a></nav>
     </div>
-    <div class="wrap footer-legal"><span>© <b id="year">2026</b> MatchPoint</span><span>TCC · Desenvolvimento de Sistemas · TDS2</span></div>
+    <div class="container footer-bottom"><span>© <b id="year">2026</b> MatchPoint</span><span>Laura · Lucas · Marcelo · Maria · Renato</span></div>
   </footer>
-
 </body>
 </html>
