@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MatchPoint conecta atletas de tênis, treinadores e instituições a oportunidades esportivas reais.">
+  <meta name="theme-color" content="#0b1f34">
+  <title>MatchPoint — Conectando talentos às oportunidades</title>
+  <link rel="icon" type="image/png" href="assets/icone.png">
+  <link rel="apple-touch-icon" href="assets/icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
+  <link rel="stylesheet" href="style.css?v=6">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="nav-shell">
+      <a class="brand" href="#inicio" aria-label="MatchPoint, início">
+        <img class="brand-logo" src="assets/logoCompleta.png" alt="" width="300" height="211">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#problema">O desafio</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#match-score">Match Score</a>
+        <a href="#perfis">Para quem</a>
+        <a href="#impacto">Impacto</a>
+        <a href="hotsite/index.html">TCC</a>
+      </nav>
+
+      <button class="button button-small header-cta js-open-dialog" type="button">Faça parte</button>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-menu" aria-label="Navegação móvel" aria-hidden="true">
+      <a href="#problema">O desafio</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#match-score">Match Score</a>
+      <a href="#perfis">Para quem</a>
+      <a href="#impacto">Impacto</a>
+      <a href="hotsite/index.html">Hotsite do TCC</a>
+      <button class="button js-open-dialog" type="button">Faça parte</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/matchpoint-hero.webp" alt="Atletas de tênis em uma composição esportiva" width="1717" height="916" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="court-line court-line-one" aria-hidden="true"></div>
+      <div class="court-line court-line-two" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <div class="hero-copy reveal is-visible">
+          <span class="eyebrow eyebrow-light"><span></span> O ponto de encontro do esporte</span>
+          <h1 id="hero-title">Conectando talentos às <em>oportunidades.</em></h1>
+          <p>Uma plataforma criada para aproximar atletas, treinadores e instituições, transformando potencial esportivo em oportunidades reais.</p>
+          <div class="hero-actions">
+            <a class="button" href="#como-funciona">Conhecer o MatchPoint <span aria-hidden="true">↗</span></a>
+            <button class="text-button js-open-dialog" type="button"><span class="play-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span> Faça parte</button>
+          </div>
+        </div>
+
+        <div class="connection-card reveal is-visible" aria-label="Fluxo entre os perfis do MatchPoint">
+          <div class="connection-head">
+            <span>Conexão em jogo</span>
+            <span class="live-dot">ao vivo</span>
+          </div>
+          <div class="connection-flow">
+            <div><span class="flow-index">01</span><strong>Atleta</strong><small>mostra o potencial</small></div>
+            <span class="flow-line" aria-hidden="true"></span>
+            <div><span class="flow-index">02</span><strong>Treinador</strong><small>avalia o talento</small></div>
+            <span class="flow-line" aria-hidden="true"></span>
+            <div><span class="flow-index">03</span><strong>Instituição</strong><small>abre a oportunidade</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-footer container" aria-hidden="true">
+        <span>Começamos pelo tênis</span>
+        <span class="scroll-hint"><i></i> role para descobrir</span>
+      </div>
+    </section>
+
+    <div class="signal-strip" aria-label="Recursos da plataforma">
+      <div class="signal-track">
+        <span>Perfis esportivos</span><i></i><span>Oportunidades verificadas</span><i></i><span>Match Score</span><i></i><span>Avaliações técnicas</span><i></i><span>Apoio acompanhado</span><i></i>
+        <span aria-hidden="true">Perfis esportivos</span><i aria-hidden="true"></i><span aria-hidden="true">Oportunidades verificadas</span><i aria-hidden="true"></i><span aria-hidden="true">Match Score</span><i aria-hidden="true"></i><span aria-hidden="true">Avaliações técnicas</span><i aria-hidden="true"></i><span aria-hidden="true">Apoio acompanhado</span><i aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <section class="problem section" id="problema" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <span class="eyebrow"><span></span> O desafio</span>
+            <h2 id="problem-title">Talentos existem.<br>As oportunidades <em>nem sempre chegam.</em></h2>
+          </div>
+          <p>Hoje, bolsas, avaliações, treinos e apoios ainda vivem espalhados entre redes sociais, indicações e contatos pessoais. O MatchPoint organiza esse caminho.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card reveal">
+            <div class="card-number">01</div>
+            <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-person-running"></i></span>
+            <h3>Atletas</h3>
+            <p>Dificuldade para encontrar treinamentos, bolsas, avaliações e o apoio certo para seguir evoluindo.</p>
+            <div class="card-tag">Potencial sem vitrine</div>
+          </article>
+          <article class="problem-card feature-card reveal">
+            <div class="card-number">02</div>
+            <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-chalkboard-user"></i></span>
+            <h3>Treinadores</h3>
+            <p>Dificuldade para encontrar atletas compatíveis e organizar avaliações técnicas com clareza.</p>
+            <div class="card-tag">Avaliação dispersa</div>
+          </article>
+          <article class="problem-card reveal">
+            <div class="card-number">03</div>
+            <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></span>
+            <h3>Instituições</h3>
+            <p>Dificuldade para identificar talentos e criar processos de seleção seguros e estruturados.</p>
+            <div class="card-tag">Impacto sem dados</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey section" id="como-funciona" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="journey-top reveal">
+          <span class="section-code">MP / 01—06</span>
+          <div>
+            <span class="eyebrow eyebrow-light"><span></span> Como funciona</span>
+            <h2 id="journey-title">Um só fluxo.<br><em>Do potencial ao apoio.</em></h2>
+          </div>
+          <p>O MatchPoint conecta descoberta, compatibilidade, candidatura e avaliação sem tirar das pessoas a decisão final.</p>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-step reveal"><span>01</span><span class="step-symbol" aria-hidden="true"><i class="fa-solid fa-id-card"></i></span><h3>Perfil em quadra</h3><p>O atleta cria seu perfil esportivo, registra objetivos e necessidades.</p></article>
+          <article class="journey-step reveal"><span>02</span><span class="step-symbol" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span><h3>Oportunidade aberta</h3><p>Treinadores e instituições publicam possibilidades reais de apoio.</p></article>
+          <article class="journey-step reveal"><span>03</span><span class="step-symbol" aria-hidden="true"><i class="fa-solid fa-chart-pie"></i></span><h3>Match Score</h3><p>A compatibilidade é calculada com critérios transparentes.</p></article>
+          <article class="journey-step reveal"><span>04</span><span class="step-symbol" aria-hidden="true"><i class="fa-solid fa-paper-plane"></i></span><h3>Candidatura</h3><p>O atleta envia seu perfil e os documentos necessários em um só lugar.</p></article>
+          <article class="journey-step reveal"><span>05</span><span class="step-symbol" aria-hidden="true"><i class="fa-solid fa-clipboard-check"></i></span><h3>Avaliação humana</h3><p>Treinadores analisam o potencial técnico quando necessário.</p></article>
+          <article class="journey-step reveal"><span>06</span><span class="step-symbol" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span><h3>Impacto acompanhado</h3><p>A instituição decide e acompanha o apoio e seus resultados.</p></article>
+        </div>
+        <p class="human-note reveal"><span>Importante</span> A tecnologia aproxima. A decisão final continua humana.</p>
+      </div>
+    </section>
+
+    <section class="score section" id="match-score" aria-labelledby="score-title">
+      <div class="score-grid-bg" aria-hidden="true"></div>
+      <div class="container score-layout">
+        <div class="score-copy reveal">
+          <span class="eyebrow eyebrow-light"><span></span> Match Score</span>
+          <h2 id="score-title">Compatibilidade que você <em>consegue entender.</em></h2>
+          <p>O Match Score cruza nível esportivo, objetivos, necessidades, localização e disponibilidade para indicar a sintonia entre atleta e oportunidade.</p>
+          <ul class="check-list">
+            <li><span aria-hidden="true"><i class="fa-solid fa-check"></i></span> Critérios claros e auditáveis</li>
+            <li><span aria-hidden="true"><i class="fa-solid fa-check"></i></span> Pontos favoráveis e de atenção</li>
+            <li><span aria-hidden="true"><i class="fa-solid fa-check"></i></span> Nenhuma decisão automatizada</li>
+          </ul>
+          <a class="arrow-link" href="#perfis">Ver para quem é <span>→</span></a>
+        </div>
+
+        <div class="score-panel reveal" aria-label="Exemplo de Match Score de 94 por cento">
+          <div class="score-panel-top">
+            <span class="verified-pill"><i></i> Perfil verificado</span>
+            <span>MP–094</span>
+          </div>
+          <div class="score-main">
+            <div class="score-ring" data-score="94">
+              <svg viewBox="0 0 180 180" aria-hidden="true">
+                <circle class="ring-track" cx="90" cy="90" r="76"></circle>
+                <circle class="ring-value" cx="90" cy="90" r="76"></circle>
+              </svg>
+              <div><strong class="score-number">0</strong><sup>%</sup><span>compatível</span></div>
+            </div>
+            <div class="score-person">
+              <span>Oportunidade demonstrativa</span>
+              <strong>Apoio Circuito Juvenil</strong>
+              <small>Ana Clara × Move Sports</small>
+            </div>
+          </div>
+          <div class="score-factors">
+            <div><span><b>Necessidade</b><em>100%</em></span><i><u data-width="100"></u></i></div>
+            <div><span><b>Objetivos</b><em>96%</em></span><i><u data-width="96"></u></i></div>
+            <div><span><b>Categoria e nível</b><em>94%</em></span><i><u data-width="94"></u></i></div>
+            <div><span><b>Localização</b><em>88%</em></span><i><u data-width="88"></u></i></div>
+          </div>
+          <div class="score-status"><span>Excelente compatibilidade</span><span>Elegível <i>✓</i></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profiles section" id="perfis" aria-labelledby="profiles-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Feito para conectar</span>
+          <h2 id="profiles-title">Três perfis.<br><em>Um mesmo objetivo.</em></h2>
+        </div>
+        <div class="profiles-grid">
+          <article class="profile-card profile-athlete reveal">
+            <div class="profile-top"><span>01</span><i>Atleta</i></div>
+            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-person-running"></i></span>
+            <h3>Para quem quer ir além.</h3>
+            <ul><li>Criar perfil esportivo</li><li>Encontrar oportunidades</li><li>Acompanhar candidaturas</li></ul>
+            <button type="button" class="profile-action js-open-dialog" data-role="Atleta" aria-label="Participar como atleta">↗</button>
+          </article>
+          <article class="profile-card profile-coach reveal">
+            <div class="profile-top"><span>02</span><i>Treinador</i></div>
+            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-chalkboard-user"></i></span>
+            <h3>Para quem desenvolve talento.</h3>
+            <ul><li>Criar oportunidades</li><li>Avaliar atletas</li><li>Contribuir com o desenvolvimento</li></ul>
+            <button type="button" class="profile-action js-open-dialog" data-role="Treinador" aria-label="Participar como treinador">↗</button>
+          </article>
+          <article class="profile-card profile-institution reveal">
+            <div class="profile-top"><span>03</span><i>Instituição</i></div>
+            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-building-columns"></i></span>
+            <h3>Para quem transforma potencial.</h3>
+            <ul><li>Oferecer apoio</li><li>Encontrar talentos</li><li>Acompanhar impacto</li></ul>
+            <button type="button" class="profile-action js-open-dialog" data-role="Instituição" aria-label="Participar como instituição">↗</button>
+          </article>
+        </div>
+        <div class="minor-note reveal">
+          <span class="minor-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+          <p><strong>Proteção também faz parte do jogo.</strong> Perfis de atletas menores são administrados pelo responsável legal, do cadastro à candidatura.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="women section" id="mulheres" aria-labelledby="women-title">
+      <div class="women-lines" aria-hidden="true"></div>
+      <div class="container women-layout">
+        <div class="women-copy reveal">
+          <span class="eyebrow eyebrow-dark"><span></span> Elas no esporte</span>
+          <h2 id="women-title">Mais espaço.<br>Mais incentivo.<br><em>Mais jogo.</em></h2>
+          <p>Uma área para ampliar a participação feminina e tornar oportunidades, eventos e conteúdos mais visíveis e acessíveis.</p>
+          <a class="button button-dark" href="#impacto">Conhecer a iniciativa <span>↗</span></a>
+        </div>
+        <div class="women-board reveal">
+          <article class="women-feature">
+            <div class="feature-label"><span>Destaque</span><span>2026</span></div>
+            <div class="feature-quote">“Quando uma entra em quadra, muitas outras enxergam o caminho.”</div>
+            <div class="feature-footer"><span>MatchPoint</span><i>●</i></div>
+          </article>
+          <div class="women-mini-grid">
+            <article><span>12</span><p>Oportunidades em destaque</p><i>↗</i></article>
+            <article><span>04</span><p>Clínicas e eventos</p><i>↗</i></article>
+            <article><span>08</span><p>Projetos parceiros</p><i>↗</i></article>
+            <article><span>24h</span><p>Canal de segurança</p><i>↗</i></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact section" id="impacto" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="impact-heading reveal">
+          <div><span class="eyebrow"><span></span> Impacto em movimento</span><h2 id="impact-title">Cada conexão<br><em>muda o placar.</em></h2></div>
+          <p>Indicadores demonstrativos de uma rede que cresce quando diferentes partes do esporte começam a jogar juntas.</p>
+        </div>
+        <div class="stats-grid" aria-label="Indicadores demonstrativos">
+          <div class="stat reveal"><span class="stat-index">01</span><strong data-count="2400" data-suffix="+">0</strong><p>Atletas conectados</p></div>
+          <div class="stat reveal"><span class="stat-index">02</span><strong data-count="380" data-suffix="+">0</strong><p>Oportunidades criadas</p></div>
+          <div class="stat reveal"><span class="stat-index">03</span><strong data-count="960" data-suffix="+">0</strong><p>Avaliações realizadas</p></div>
+          <div class="stat reveal"><span class="stat-index">04</span><strong data-count="145" data-suffix="+">0</strong><p>Apoios registrados</p></div>
+        </div>
+        <p class="demo-caption">* Números fictícios para demonstração do projeto.</p>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="final-court" aria-hidden="true"><span></span><span></span></div>
+      <i class="fa-solid fa-circle tennis-ball" aria-hidden="true"></i>
+      <div class="container final-content reveal">
+        <span class="eyebrow eyebrow-light"><span></span> O próximo ponto começa aqui</span>
+        <h2 id="cta-title">O próximo talento pode estar esperando <em>uma oportunidade.</em></h2>
+        <button class="button button-large js-open-dialog" type="button">Conhecer o MatchPoint <span>↗</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="brand brand-footer" href="#inicio" aria-label="MatchPoint, voltar ao início">
+        <img class="brand-logo" src="assets/logoCompleta.png" alt="" width="300" height="211" loading="lazy">
+      </a>
+      <p>Conectando talentos às oportunidades.</p>
+      <a class="footer-email" href="mailto:contato@matchpoint.com.br">contato@matchpoint.com.br <span>↗</span></a>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="current-year">2026</span> MatchPoint</span>
+      <div><a href="hotsite/index.html">Hotsite do TCC</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Privacidade</a></div>
+      <span>Projeto acadêmico · TDS2</span>
+    </div>
+  </footer>
+
+  <dialog class="join-dialog" id="join-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Fechar">×</button>
+    <div class="dialog-step dialog-form-step">
+      <span class="eyebrow"><span></span> Entre em quadra</span>
+      <h2 id="dialog-title">Como você quer fazer parte?</h2>
+      <p>Escolha seu perfil e deixe seu contato para acompanhar os próximos passos do MatchPoint.</p>
+      <form id="interest-form">
+        <fieldset>
+          <legend>Selecione um perfil</legend>
+          <label><input type="radio" name="role" value="Atleta" required><span>Atleta</span></label>
+          <label><input type="radio" name="role" value="Treinador"><span>Treinador</span></label>
+          <label><input type="radio" name="role" value="Instituição"><span>Instituição</span></label>
+        </fieldset>
+        <label class="input-label" for="interest-email">Seu melhor e-mail</label>
+        <input id="interest-email" name="email" type="email" placeholder="voce@exemplo.com" autocomplete="email" required>
+        <button class="button" type="submit">Quero acompanhar <span>↗</span></button>
+      </form>
+    </div>
+    <div class="dialog-step dialog-success-step" hidden>
+      <span class="success-mark" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+      <h2>Você entrou no jogo.</h2>
+      <p>Interesse registrado para esta demonstração. Em uma versão conectada, os dados seguiriam para a lista de espera.</p>
+      <button class="button dialog-done" type="button">Continuar explorando</button>
+    </div>
+  </dialog>
+</body>
+</html>
