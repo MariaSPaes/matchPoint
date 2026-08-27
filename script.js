@@ -65,31 +65,6 @@ const scoreObserver = new IntersectionObserver((entries, observer) => {
 
 scoreObserver.observe(scorePanel);
 
-function animateNumber(element, target, duration, suffix = '') {
-  const start = performance.now();
-  const formatter = new Intl.NumberFormat('pt-BR');
-
-  const tick = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    element.textContent = `${formatter.format(Math.round(target * eased))}${suffix}`;
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-
-  requestAnimationFrame(tick);
-}
-
-const statsObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    const target = Number(entry.target.dataset.count);
-    animateNumber(entry.target, target, 1500, entry.target.dataset.suffix || '');
-    observer.unobserve(entry.target);
-  });
-}, { threshold: 0.7 });
-
-document.querySelectorAll('[data-count]').forEach((counter) => statsObserver.observe(counter));
-
 const trackedSections = document.querySelectorAll('main section[id]');
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=13">
   <script src="script.js?v=3" defer></script>
 </head>
 <body>
@@ -27,7 +27,6 @@
       <nav class="desktop-nav" aria-label="Navegação principal">
         <a href="#visao-geral">Visão geral</a>
         <a href="#projeto">Projeto</a>
-        <a href="#prototipo">Protótipo</a>
         <a href="#equipe">Equipe</a>
         <a href="#documento">Documento</a>
       </nav>
@@ -37,7 +36,6 @@
     <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação móvel" aria-hidden="true">
       <a href="#visao-geral">Visão geral</a>
       <a href="#projeto">Projeto</a>
-      <a href="#prototipo">Protótipo</a>
       <a href="#equipe">Equipe</a>
       <a href="#documento">Documento</a>
       <a class="button" href="../index.html">Ver landing page</a>
@@ -81,9 +79,8 @@
         <a href="#projeto"><b>02</b> Problema e objetivos</a>
         <a href="#solucao"><b>03</b> Solução</a>
         <a href="#processo"><b>04</b> Processo</a>
-        <a href="#prototipo"><b>05</b> Protótipo</a>
-        <a href="#escopo"><b>06</b> Escopo</a>
-        <a href="#documento"><b>07</b> Documento</a>
+        <a href="#escopo"><b>05</b> Escopo</a>
+        <a href="#documento"><b>06</b> Documento</a>
       </div>
     </nav>
 
@@ -102,21 +99,25 @@
       </div>
     </section>
 
-    <section class="team-banner" id="equipe" aria-labelledby="team-title">
-      <a class="team-banner-link" href="equipe/index.html" aria-label="Conhecer os integrantes e suas funções no projeto">
-        <div class="team-image" aria-hidden="true"></div>
-        <div class="team-shade" aria-hidden="true"></div>
-        <div class="container team-content reveal">
-          <span class="section-number light-number">Equipe / TDS2</span>
-          <div class="team-main-copy">
-            <span class="eyebrow light"><i></i> Quem constrói o MatchPoint</span>
-            <h2 id="team-title">Cinco integrantes.<br><em>Uma visão compartilhada.</em></h2>
-            <p>Laura Flôr, Lucas Robson, Marcelo Claudino, Maria Paes e Renato José.</p>
-          </div>
-          <div class="team-callout"><span>Conhecer a equipe e as funções</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></div>
-          <small class="photo-pending"><i class="fa-solid fa-image" aria-hidden="true"></i> A foto oficial da turma será aplicada neste banner.</small>
+    <section class="team-section section" id="equipe" aria-labelledby="team-title">
+      <div class="container">
+        <div class="team-heading reveal">
+          <span class="section-number">Equipe / TDS2</span>
+          <div><span class="eyebrow"><i></i> Quem desenvolve o MatchPoint</span><h2 id="team-title">Uma equipe, um projeto <em>em construção.</em></h2></div>
         </div>
-      </a>
+
+        <p class="team-names reveal">Laura Flôr <span>•</span> Lucas Robson <span>•</span> Marcelo Claudino <span>•</span> Maria Paes <span>•</span> Renato José</p>
+
+        <div class="team-functions">
+          <div class="team-functions-intro reveal"><span class="content-label">Funções da equipe</span><h3>Frentes que transformam a ideia em protótipo.</h3></div>
+          <div class="team-function-grid">
+            <article class="team-function-card reveal"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h3>Pesquisa e requisitos</h3><p>Levantamento do problema, público e regras do sistema.</p></article>
+            <article class="team-function-card reveal"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><h3>Arquitetura e experiência</h3><p>Organização das jornadas, telas e decisões de navegação.</p></article>
+            <article class="team-function-card reveal"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><h3>Protótipo e desenvolvimento</h3><p>Construção visual e técnica da solução apresentada.</p></article>
+            <article class="team-function-card reveal"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><h3>Documentação e apresentação</h3><p>Registro do projeto e preparação da entrega final.</p></article>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="project section" id="projeto" aria-labelledby="project-title">
@@ -125,19 +126,11 @@
         <div><span class="eyebrow"><i></i> Por que o MatchPoint?</span><h2 id="project-title">O problema não é a falta de talento.<br><em>É a falta de conexão organizada.</em></h2></div>
       </div>
 
-      <div class="container problem-layout">
-        <article class="problem-copy reveal">
-          <span class="content-label">Contexto</span>
-          <p class="lead-text">As oportunidades esportivas ficam espalhadas em redes sociais, indicações e contatos pessoais. Isso reduz o alcance, dificulta a comparação de critérios e torna o processo pouco transparente.</p>
-          <p>Treinadores e instituições também enfrentam dificuldades para divulgar oportunidades, analisar candidatos, solicitar avaliações e acompanhar o apoio concedido.</p>
-        </article>
-        <blockquote class="research-question reveal"><span>Questão orientadora</span>Como uma plataforma digital pode organizar a conexão entre talentos esportivos e oportunidades, preservando critérios claros, segurança e decisão humana?</blockquote>
+      <div class="container project-summary">
+        <article class="project-problem reveal"><span class="content-label">O desafio</span><h3>Oportunidades existem, mas nem sempre chegam a quem precisa.</h3><p>Atletas, treinadores e instituições ainda dependem de redes sociais, indicações e contatos pessoais para encontrar e divulgar oportunidades.</p></article>
+        <article class="project-objective reveal"><span class="content-label">Objetivo do projeto</span><h3>Organizar essa conexão em uma jornada clara.</h3><p>O MatchPoint reúne perfis, oportunidades, candidaturas, avaliações e registros de apoio em um único fluxo.</p></article>
       </div>
-
-      <div class="container objective-layout">
-        <article class="general-objective reveal"><span class="content-label">Objetivo geral</span><h3>Estruturar uma plataforma que conecte atletas, treinadores e instituições em uma jornada única, compreensível e rastreável.</h3></article>
-        <article class="specific-objectives reveal"><span class="content-label">Objetivos específicos</span><ul><li>Centralizar perfis e oportunidades esportivas.</li><li>Organizar candidaturas, avaliações e decisões.</li><li>Explicar a compatibilidade pelo Match Score.</li><li>Registrar apoio, impacto e histórico.</li><li>Proteger atletas menores e dados sensíveis.</li></ul></article>
-      </div>
+      <div class="container project-focus reveal"><span>O que orienta a primeira entrega</span><p>Perfis confiáveis, oportunidades bem descritas, Match Score explicável e acompanhamento de cada candidatura.</p></div>
     </section>
 
     <section class="solution section dark-section" id="solucao" aria-labelledby="solution-title">
@@ -172,26 +165,6 @@
         <li class="reveal"><span>04</span><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><div><small>Materializar</small><h3>Interface e protótipo</h3><p>Transformação das regras em telas e interações demonstráveis.</p></div></li>
         <li class="reveal"><span>05</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><small>Validar</small><h3>Fluxos prioritários</h3><p>Revisão da coerência entre problema, solução, regras e experiência.</p></div></li>
       </ol>
-    </section>
-
-    <section class="prototype section" id="prototipo" aria-labelledby="prototype-title">
-      <div class="container prototype-heading reveal">
-        <div><span class="section-number">05 / Protótipo</span><span class="eyebrow"><i></i> Caso de demonstração</span><h2 id="prototype-title">A arquitetura ganha forma<br><em>em uma experiência navegável.</em></h2></div>
-        <p>O protótipo demonstra como perfil, oportunidade, Match Score, candidatura, avaliação técnica e decisão institucional funcionam como partes do mesmo processo.</p>
-      </div>
-
-      <div class="container prototype-frame reveal">
-        <div class="browser-bar"><span><i></i><i></i><i></i></span><b>prototipo.matchpoint / atleta / início</b><small>TCC</small></div>
-        <div class="prototype-body">
-          <aside class="prototype-sidebar"><img src="../assets/icone.png" alt="" width="220" height="242"><i class="fa-solid fa-house active" aria-hidden="true"></i><i class="fa-solid fa-compass" aria-hidden="true"></i><i class="fa-solid fa-file-lines" aria-hidden="true"></i><i class="fa-solid fa-user" aria-hidden="true"></i></aside>
-          <div class="prototype-content">
-            <header><div><small>Olá, Ana Clara</small><h3>Seu próximo ponto começa aqui.</h3></div><i class="fa-solid fa-bell" aria-hidden="true"></i></header>
-            <div class="prototype-metrics"><article><span>Ranking regional</span><strong>#24</strong><small>+3 posições</small></article><article><span>Perfil esportivo</span><strong>92%</strong><small>Quase completo</small></article><article class="metric-highlight"><span>Melhor combinação</span><strong>94%</strong><small>Match excelente</small></article></div>
-            <div class="opportunity"><div class="opportunity-art" aria-hidden="true"></div><div><small>Bolsa esportiva</small><h4>Apoio Circuito Juvenil</h4><p>Move Sports · São Paulo, SP</p><span>Inscrição + transporte</span></div><strong>94%</strong></div>
-          </div>
-          <aside class="prototype-notes"><span>Caso central</span><h3>O que a tela demonstra</h3><ul><li>Perfil e dados esportivos</li><li>Oportunidade recomendada</li><li>Match Score explicável</li><li>Próxima ação clara</li></ul><a href="../index.html#match-score">Ver o Match Score na landing ↗</a></aside>
-        </div>
-      </div>
     </section>
 
     <section class="scope section" id="escopo" aria-labelledby="scope-title">
@@ -239,7 +212,7 @@
     <div class="container footer-main">
       <a class="site-logo footer-logo" href="#inicio" aria-label="MatchPoint TCC, voltar ao início"><img src="../assets/logoCompleta.png" alt="" width="300" height="211"></a>
       <p>Trabalho de Conclusão de Curso · Desenvolvimento de Sistemas · TDS2.</p>
-      <nav aria-label="Navegação do rodapé"><a href="#visao-geral">Visão geral</a><a href="#projeto">Projeto</a><a href="equipe/index.html">Equipe</a><a href="#documento">Documento</a><a href="../index.html">Landing page</a></nav>
+      <nav aria-label="Navegação do rodapé"><a href="#visao-geral">Visão geral</a><a href="#projeto">Projeto</a><a href="#equipe">Equipe</a><a href="#documento">Documento</a><a href="../index.html">Landing page</a></nav>
     </div>
     <div class="container footer-bottom"><span>© <b id="year">2026</b> MatchPoint</span><span>Laura · Lucas · Marcelo · Maria · Renato</span></div>
   </footer>
