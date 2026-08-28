@@ -10,10 +10,11 @@
   <link rel="apple-touch-icon" href="../assets/icone.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css">
+  <link rel="stylesheet" href="style.css?v=26">
   <script src="script.js?v=3" defer></script>
 </head>
 <body>
@@ -44,14 +45,13 @@
 
   <main id="conteudo">
     <section class="tcc-hero" id="inicio" aria-labelledby="hero-title">
-      <img class="hero-background" src="../assets/matchpoint-hero.webp" alt="Atletas de tênis em uma composição esportiva" width="1717" height="916" fetchpriority="high">
+      <img class="hero-background" src="../assets/hotsite-hero.png" alt="Atletas de tênis em uma composição esportiva" width="1717" height="916" fetchpriority="high">
       <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-court" aria-hidden="true"><span></span><span></span></div>
 
       <div class="container hero-content">
         <div class="hero-copy reveal shown">
           <span class="eyebrow light"><i></i> Trabalho de Conclusão de Curso · TDS2</span>
-          <h1 id="hero-title">MatchPoint.<br><em>Do problema ao protótipo.</em></h1>
+          <h1 id="hero-title">MatchPoint.<br><em>Da ideia à solução.</em></h1>
           <p>Uma apresentação digital sobre a pesquisa, as decisões e a arquitetura de uma plataforma criada para organizar o encontro entre talentos esportivos e oportunidades.</p>
           <div class="hero-actions">
             <a class="button" href="#visao-geral">Iniciar apresentação <span aria-hidden="true">↓</span></a>
@@ -59,12 +59,6 @@
           </div>
         </div>
 
-        <aside class="hero-summary reveal shown" aria-label="Resumo do projeto">
-          <span class="summary-label">Escopo documentado</span>
-          <div class="summary-number"><strong>38</strong><span>telas<br>principais</span></div>
-          <div class="summary-items"><span>05 perfis</span><span>05 fluxos</span><span>01 caso central</span></div>
-          <p>Tênis como modalidade inicial. Arquitetura preparada para demonstrar a jornada completa do sistema.</p>
-        </aside>
       </div>
 
       <div class="container hero-meta" aria-hidden="true">
@@ -87,15 +81,12 @@
     <section class="overview section" id="visao-geral" aria-labelledby="overview-title">
       <div class="container section-heading overview-heading reveal">
         <span class="section-number">01 / Visão geral</span>
-        <div><span class="eyebrow"><i></i> O projeto em um minuto</span><h2 id="overview-title">Uma plataforma para transformar <em>oportunidade dispersa em jornada organizada.</em></h2></div>
+        <div><span class="eyebrow"><i></i> O projeto em um minuto</span><h2 id="overview-title">Talentos e oportunidades. <em>Em uma jornada organizada.</em></h2></div>
       </div>
       <div class="container overview-grid">
         <article class="overview-card reveal"><span>O desafio</span><h3>O acesso depende de redes, indicações e contatos pessoais.</h3><p>Atletas têm dificuldade para localizar treinamentos, bolsas, avaliações, transporte, equipamentos e inscrições.</p></article>
         <article class="overview-card highlight reveal"><span>A proposta</span><h3>Reunir perfis, oportunidades e processos em um único fluxo.</h3><p>O MatchPoint organiza descoberta, compatibilidade, candidatura, avaliação, seleção e registro do apoio.</p></article>
         <article class="overview-card reveal"><span>A entrega</span><h3>Uma arquitetura completa para prototipação e demonstração.</h3><p>O documento descreve 38 telas, regras de negócio, estados, conexões e casos prioritários.</p></article>
-      </div>
-      <div class="container overview-stats reveal">
-        <span><strong>5</strong> perfis conectados</span><span><strong>38</strong> telas documentadas</span><span><strong>5</strong> fluxos de ponta a ponta</span><span><strong>1</strong> modalidade inicial</span>
       </div>
     </section>
 
@@ -103,18 +94,25 @@
       <div class="container">
         <div class="team-heading reveal">
           <span class="section-number">Equipe / TDS2</span>
-          <div><span class="eyebrow"><i></i> Quem desenvolve o MatchPoint</span><h2 id="team-title">Uma equipe, um projeto <em>em construção.</em></h2></div>
+          <div><span class="eyebrow"><i></i> Quem desenvolve o MatchPoint</span><h2 id="team-title">Cinco integrantes. <em>Uma visão compartilhada.</em></h2></div>
         </div>
 
-        <p class="team-names reveal">Laura Flôr <span>•</span> Lucas Robson <span>•</span> Marcelo Claudino <span>•</span> Maria Paes <span>•</span> Renato José</p>
+        <figure class="team-photo reveal">
+          <img src="../assets/foto-equipe.png" alt="Laura Flôr, Lucas Robson, Marcelo Claudino, Maria Paes e Renato José na quadra de tênis" width="883" height="385">
+          <figcaption>Trabalho de Conclusão de Curso · TDS2</figcaption>
+        </figure>
+
+        <div class="team-names reveal" aria-label="Integrantes da equipe">
+          <span>Laura Flôr</span><span>Lucas Robson</span><span>Marcelo Claudino</span><span>Maria Paes</span><span>Renato José</span>
+        </div>
 
         <div class="team-functions">
-          <div class="team-functions-intro reveal"><span class="content-label">Funções da equipe</span><h3>Frentes que transformam a ideia em protótipo.</h3></div>
+          <div class="team-functions-intro reveal"><span class="content-label">Organização do trabalho</span><h3>Do estudo inicial à apresentação do projeto.</h3></div>
           <div class="team-function-grid">
             <article class="team-function-card reveal"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h3>Pesquisa e requisitos</h3><p>Levantamento do problema, público e regras do sistema.</p></article>
             <article class="team-function-card reveal"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><h3>Arquitetura e experiência</h3><p>Organização das jornadas, telas e decisões de navegação.</p></article>
-            <article class="team-function-card reveal"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><h3>Protótipo e desenvolvimento</h3><p>Construção visual e técnica da solução apresentada.</p></article>
-            <article class="team-function-card reveal"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><h3>Documentação e apresentação</h3><p>Registro do projeto e preparação da entrega final.</p></article>
+            <article class="team-function-card reveal"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><h3>Protótipo e desenvolvimento</h3><p>Construção visual e técnica da solução.</p></article>
+            <article class="team-function-card reveal"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><h3>Documentação e apresentação</h3><p>Registro das decisões e preparação da entrega final.</p></article>
           </div>
         </div>
       </div>
@@ -123,20 +121,20 @@
     <section class="project section" id="projeto" aria-labelledby="project-title">
       <div class="container section-heading reveal">
         <span class="section-number">02 / Problema e objetivos</span>
-        <div><span class="eyebrow"><i></i> Por que o MatchPoint?</span><h2 id="project-title">O problema não é a falta de talento.<br><em>É a falta de conexão organizada.</em></h2></div>
+        <div><span class="eyebrow"><i></i> Por que o MatchPoint?</span><h2 id="project-title">Talento não falta. <em>Falta conexão organizada.</em></h2></div>
       </div>
 
       <div class="container project-summary">
         <article class="project-problem reveal"><span class="content-label">O desafio</span><h3>Oportunidades existem, mas nem sempre chegam a quem precisa.</h3><p>Atletas, treinadores e instituições ainda dependem de redes sociais, indicações e contatos pessoais para encontrar e divulgar oportunidades.</p></article>
         <article class="project-objective reveal"><span class="content-label">Objetivo do projeto</span><h3>Organizar essa conexão em uma jornada clara.</h3><p>O MatchPoint reúne perfis, oportunidades, candidaturas, avaliações e registros de apoio em um único fluxo.</p></article>
       </div>
-      <div class="container project-focus reveal"><span>O que orienta a primeira entrega</span><p>Perfis confiáveis, oportunidades bem descritas, Match Score explicável e acompanhamento de cada candidatura.</p></div>
+      <div class="container project-focus reveal"><span>Prioridade da primeira entrega</span><p>Perfis confiáveis, oportunidades bem descritas e acompanhamento claro de cada candidatura.</p></div>
     </section>
 
     <section class="solution section dark-section" id="solucao" aria-labelledby="solution-title">
       <div class="container section-heading reveal">
         <span class="section-number light-number">03 / Solução proposta</span>
-        <div><span class="eyebrow light"><i></i> Ecossistema MatchPoint</span><h2 id="solution-title">Responsabilidades separadas.<br><em>Jornadas conectadas.</em></h2></div>
+        <div><span class="eyebrow light"><i></i> Ecossistema MatchPoint</span><h2 id="solution-title">Perfis bem definidos. <em>Jornadas conectadas.</em></h2></div>
       </div>
 
       <div class="container role-grid">
@@ -148,15 +146,15 @@
       </div>
 
       <div class="container core-flow reveal">
-        <div><span class="content-label light-label">Fluxo central da demonstração</span><h3>Da publicação ao registro do apoio.</h3></div>
-        <ol><li><b>01</b><span>Move Sports publica</span></li><li><b>02</b><span>Ana Clara recebe 94%</span></li><li><b>03</b><span>Responsável candidata</span></li><li><b>04</b><span>Treinador avalia</span></li><li><b>05</b><span>Instituição aprova</span></li></ol>
+        <div><span class="content-label light-label">Fluxo principal</span><h3>Da oportunidade ao acompanhamento.</h3></div>
+        <ol><li><b>01</b><span>Oportunidade publicada</span></li><li><b>02</b><span>Perfil compatível</span></li><li><b>03</b><span>Candidatura enviada</span></li><li><b>04</b><span>Avaliação humana</span></li><li><b>05</b><span>Decisão acompanhada</span></li></ol>
       </div>
     </section>
 
     <section class="process section" id="processo" aria-labelledby="process-title">
       <div class="container section-heading reveal">
         <span class="section-number">04 / Processo do projeto</span>
-        <div><span class="eyebrow"><i></i> Do estudo à demonstração</span><h2 id="process-title">Uma sequência lógica.<br><em>Cada decisão sustenta a próxima.</em></h2></div>
+        <div><span class="eyebrow"><i></i> Do estudo à demonstração</span><h2 id="process-title">Uma sequência lógica. <em>Cada decisão sustenta a próxima.</em></h2></div>
       </div>
       <ol class="container process-list">
         <li class="reveal"><span>01</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><div><small>Compreender</small><h3>Problema e públicos</h3><p>Delimitação do contexto e identificação das necessidades dos usuários.</p></div></li>
@@ -164,13 +162,14 @@
         <li class="reveal"><span>03</span><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><div><small>Organizar</small><h3>Arquitetura e fluxos</h3><p>Conexão das telas em jornadas completas para cada perfil.</p></div></li>
         <li class="reveal"><span>04</span><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><div><small>Materializar</small><h3>Interface e protótipo</h3><p>Transformação das regras em telas e interações demonstráveis.</p></div></li>
         <li class="reveal"><span>05</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><small>Validar</small><h3>Fluxos prioritários</h3><p>Revisão da coerência entre problema, solução, regras e experiência.</p></div></li>
+        <li class="reveal"><span>06</span><i class="fa-solid fa-file-lines" aria-hidden="true"></i><div><small>Apresentar</small><h3>Documento e entrega</h3><p>Organização do material final e demonstração das decisões do projeto.</p></div></li>
       </ol>
     </section>
 
     <section class="scope section" id="escopo" aria-labelledby="scope-title">
       <div class="container section-heading reveal">
         <span class="section-number">06 / Escopo e limites</span>
-        <div><span class="eyebrow"><i></i> O que a primeira entrega precisa provar</span><h2 id="scope-title">Escopo congelado.<br><em>Prioridades bem definidas.</em></h2></div>
+        <div><span class="eyebrow"><i></i> O que a primeira entrega precisa provar</span><h2 id="scope-title">Escopo definido. <em>Prioridades bem estabelecidas.</em></h2></div>
       </div>
       <div class="container scope-layout">
         <div class="scope-list reveal">
@@ -188,7 +187,7 @@
     <section class="closing" aria-labelledby="closing-title">
       <div class="container closing-content reveal">
         <span class="eyebrow"><i></i> Síntese</span>
-        <h2 id="closing-title">O MatchPoint conecta o início, o desenvolvimento e o fim <em>de uma oportunidade esportiva.</em></h2>
+        <h2 id="closing-title">Uma jornada esportiva. <em>Do potencial ao apoio.</em></h2>
         <p>O projeto estabelece uma base coerente para apresentar a proposta, validar os fluxos e orientar as próximas etapas de desenvolvimento.</p>
       </div>
     </section>
@@ -198,23 +197,41 @@
         <div class="document-copy reveal">
           <span class="section-number light-number">07 / Documento</span>
           <span class="eyebrow light"><i></i> Material completo do projeto</span>
-          <h2 id="document-title">Consulte a ideia, as telas<br><em>e toda a lógica do sistema.</em></h2>
-          <p>O documento reúne os perfis, regras, 38 telas, modais, estados, conexões e fluxos necessários para orientar o Figma e o desenvolvimento do TCC.</p>
-          <div class="document-info"><span><strong>PDF</strong> formato</span><span><strong>28</strong> páginas</span><span><strong>0,49 MB</strong> tamanho</span></div>
-          <div class="document-actions"><a class="button" href="../assets/documentos/MatchPoint_Documento_TCC.pdf" download="MatchPoint_Documento_TCC.pdf"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Baixar documento</a><a class="text-link light-link" href="../assets/documentos/MatchPoint_Documento_TCC.pdf" target="_blank" rel="noopener">Visualizar no navegador <span aria-hidden="true">↗</span></a></div>
+          <h2 id="document-title">Documento completo. <em>Do TCC MatchPoint.</em></h2>
+          <p>Reunimos a pesquisa, os perfis, as regras, as telas e os fluxos que orientam a construção da proposta.</p>
+          <a class="button document-button" href="../assets/documentos/MatchPoint_Documento_TCC.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Ver PDF do TCC <span aria-hidden="true">↗</span></a>
         </div>
-        <article class="document-cover reveal" aria-label="Capa do documento MatchPoint"><span>TCC · TDS2</span><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><div><small>DOCUMENTO DO PROJETO</small><strong>MatchPoint</strong><p>Ideia, telas e lógica completa do sistema</p></div><footer><span>28 páginas</span><span>2026</span></footer></article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-main">
-      <a class="site-logo footer-logo" href="#inicio" aria-label="MatchPoint TCC, voltar ao início"><img src="../assets/logoCompleta.png" alt="" width="300" height="211"></a>
-      <p>Trabalho de Conclusão de Curso · Desenvolvimento de Sistemas · TDS2.</p>
-      <nav aria-label="Navegação do rodapé"><a href="#visao-geral">Visão geral</a><a href="#projeto">Projeto</a><a href="#equipe">Equipe</a><a href="#documento">Documento</a><a href="../index.html">Landing page</a></nav>
+      <div class="footer-brand">
+        <a class="site-logo footer-logo" href="#inicio" aria-label="MatchPoint TCC, voltar ao início"><img src="../assets/logoCompleta.png" alt="" width="300" height="211"></a>
+        <p>Um projeto acadêmico que aproxima talentos, treinadores e instituições por meio de uma jornada esportiva mais organizada.</p>
+        <div class="footer-socials" aria-label="Redes sociais do MatchPoint">
+          <a href="https://www.instagram.com/matchpoint.app/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do MatchPoint"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/matchpoint-app/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn do MatchPoint"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@matchpointapp" target="_blank" rel="noopener noreferrer" aria-label="YouTube do MatchPoint"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <nav class="footer-column" aria-label="Navegação institucional">
+        <strong>Explorar</strong>
+        <a href="#visao-geral">Visão geral</a><a href="#projeto">O projeto</a><a href="#equipe">Equipe</a><a href="#escopo">Escopo</a>
+      </nav>
+      <nav class="footer-column" aria-label="Materiais do projeto">
+        <strong>Materiais</strong>
+        <a href="../index.html">Landing page</a><a href="../assets/documentos/MatchPoint_Documento_TCC.pdf" target="_blank" rel="noopener">Documento do TCC</a><a href="#solucao">Solução proposta</a><a href="#processo">Processo</a>
+      </nav>
+      <address class="footer-column footer-contact">
+        <strong>Contato</strong>
+        <a href="mailto:contato@matchpoint.app">contato@matchpoint.app</a>
+        <span>Desenvolvimento de Sistemas · TDS2</span>
+        <span>Trabalho de Conclusão de Curso</span>
+      </address>
     </div>
-    <div class="container footer-bottom"><span>© <b id="year">2026</b> MatchPoint</span><span>Laura · Lucas · Marcelo · Maria · Renato</span></div>
+    <div class="container footer-bottom"><span>© <b id="year">2026</b> MatchPoint · Projeto acadêmico</span><span>Laura Flôr · Lucas Robson · Marcelo Claudino · Maria Paes · Renato José</span></div>
   </footer>
 </body>
 </html>
