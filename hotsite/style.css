@@ -296,7 +296,10 @@ h1, h2, h3, p { margin-top: 0; }
   .site-logo img { width: 82px; height: 58px; }
   .hero-content { min-height: 940px; padding-bottom: 55px; }
   .hero-copy h1 { font-size: clamp(3.45rem, 16vw, 4.6rem); }
-  .hero-copy h1 em { font-size: .62em; }
+  .hero-copy { width: 100%; min-width: 0; }
+  .hero-copy h1 { max-width: 100%; overflow-wrap: anywhere; }
+  .hero-copy h1 em { font-size: .62em; white-space: normal; }
+  .hero-copy > p, .hero-actions { max-width: 100%; }
   .hero-copy > p { font-size: .82rem; }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .hero-actions .button { width: 100%; }
@@ -319,6 +322,8 @@ h1, h2, h3, p { margin-top: 0; }
   .team-intro { margin: 28px 0; padding: 24px 0; }
   .member-card { padding: 23px; }
   .member-head { grid-template-columns: 42px 1fr; gap: 13px; }
+  .member-head > div { min-width: 0; }
+  .member-head h3, .member-head small, .footer-column a { overflow-wrap: anywhere; }
   .team-function-grid { grid-template-columns: 1fr; }
   .team-function-card { min-height: 0; padding: 22px; }
   .project-summary { margin-top: 40px; }
@@ -345,6 +350,25 @@ h1, h2, h3, p { margin-top: 0; }
   .footer-brand { grid-column: auto; }
   .footer-column { gap: 9px; }
   .footer-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 360px) {
+  .container { width: calc(100% - 24px); }
+  .header-inner { min-height: 70px; }
+  .tcc-hero, .hero-content { min-height: 880px; }
+  .hero-copy h1 { font-size: clamp(3rem, 16vw, 3.55rem); }
+  .hero-copy h1 em { white-space: normal; }
+  .section { padding: 66px 0; }
+  .section-heading h2, .team-heading h2, .document-copy h2, .closing h2 { font-size: 2.2rem; }
+  .overview-card, .member-card, .project-summary article, .role-card, .core-flow, .thanks-panel { padding: 21px; }
+  .member-head { grid-template-columns: 36px 1fr; gap: 10px; }
+  .member-head > span { width: 36px; height: 36px; }
+  .process-list li, .process-list li:nth-child(4) { grid-template-columns: 26px 44px minmax(0,1fr); padding: 18px 10px; gap: 8px; }
+  .process-list li > i { width: 44px; height: 44px; }
+  .process-list h3 { font-size: 1rem; overflow-wrap: anywhere; }
+  .process-list p { font-size: .78rem; }
+  .chapter-inner { gap: 18px; }
+  .footer-main { gap: 28px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
