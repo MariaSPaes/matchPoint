@@ -7,6 +7,7 @@ const joinDialog = document.querySelector('#join-dialog');
 const interestForm = document.querySelector('#interest-form');
 const formStep = document.querySelector('.dialog-form-step');
 const successStep = document.querySelector('.dialog-success-step');
+const signalTrack = document.querySelector('.signal-track');
 
 const updateHeader = () => {
   header.classList.toggle('scrolled', window.scrollY > 24);
@@ -33,6 +34,36 @@ menuToggle.addEventListener('click', () => {
 
 navLinks.forEach((link) => link.addEventListener('click', closeMenu));
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileNav.classList.contains('open')) closeMenu();
+});
+
+const setupInfiniteCarousel = () => {
+  if (!signalTrack) return;
+
+  const sourceGroup = signalTrack.querySelector('.signal-group');
+  if (!sourceGroup) return;
+
+  signalTrack.querySelectorAll('.signal-group[aria-hidden="true"]').forEach((group) => group.remove());
+
+  const groupWidth = sourceGroup.getBoundingClientRect().width;
+  if (!groupWidth) return;
+
+  const copiesNeeded = Math.max(2, Math.ceil(window.innerWidth / groupWidth) + 1);
+  for (let index = 0; index < copiesNeeded; index += 1) {
+    const clone = sourceGroup.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    signalTrack.appendChild(clone);
+  }
+
+  signalTrack.style.setProperty('--marquee-distance', `${groupWidth}px`);
+  signalTrack.style.setProperty('--marquee-duration', `${Math.max(18, groupWidth / 42)}s`);
+};
+
+const queueCarouselSetup = () => window.requestAnimationFrame(setupInfiniteCarousel);
+if (document.fonts?.ready) document.fonts.ready.then(queueCarouselSetup);
+else queueCarouselSetup();
+
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -44,6 +75,17 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 revealElements.forEach((element) => {
   if (!element.classList.contains('is-visible')) revealObserver.observe(element);
 });
+
+function animateNumber(element, target, duration) {
+  const startedAt = performance.now();
+  const tick = (now) => {
+    const progress = Math.min((now - startedAt) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    element.textContent = String(Math.round(target * eased));
+    if (progress < 1) window.requestAnimationFrame(tick);
+  };
+  window.requestAnimationFrame(tick);
+}
 
 const scorePanel = document.querySelector('.score-panel');
 const scoreObserver = new IntersectionObserver((entries, observer) => {
@@ -60,8 +102,9 @@ const scoreObserver = new IntersectionObserver((entries, observer) => {
   });
 
   animateNumber(document.querySelector('.score-number'), score, 1200);
+  scorePanel.classList.add('is-calculated');
   observer.disconnect();
-}, { threshold: 0.42 });
+}, { threshold: 0.18 });
 
 scoreObserver.observe(scorePanel);
 
@@ -124,7 +167,10 @@ interestForm.addEventListener('submit', (event) => {
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 window.addEventListener('scroll', updateHeader, { passive: true });
+let resizeFrame;
 window.addEventListener('resize', () => {
   if (window.innerWidth > 860) closeMenu();
+  window.cancelAnimationFrame(resizeFrame);
+  resizeFrame = window.requestAnimationFrame(setupInfiniteCarousel);
 });
 updateHeader();

@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css">
-  <link rel="stylesheet" href="style.css?v=7">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=21">
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -32,7 +32,7 @@
         <a href="#match-score">Match Score</a>
         <a href="#perfis">Para quem</a>
         <a href="#impacto">Impacto</a>
-        <a href="hotsite/index.html">TCC</a>
+        <a href="https://hotsite-zeta.vercel.app/">TCC</a>
       </nav>
 
       <button class="button button-small header-cta js-open-dialog" type="button">Faça parte</button>
@@ -47,14 +47,14 @@
       <a href="#match-score">Match Score</a>
       <a href="#perfis">Para quem</a>
       <a href="#impacto">Impacto</a>
-      <a href="hotsite/index.html">Hotsite do TCC</a>
+      <a href="https://hotsite-zeta.vercel.app/">Hotsite do TCC</a>
       <button class="button js-open-dialog" type="button">Faça parte</button>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <img class="hero-image" src="assets/matchpoint-hero.webp" alt="Atletas de tênis em uma composição esportiva" width="1717" height="916" fetchpriority="high">
+      <img class="hero-image" src="assets/landing-banner.png" alt="Atletas de tênis reunidos em uma composição esportiva sobre uma quadra" width="1819" height="901" fetchpriority="high">
       <div class="hero-overlay"></div>
       <div class="court-line court-line-one" aria-hidden="true"></div>
       <div class="court-line court-line-two" aria-hidden="true"></div>
@@ -74,8 +74,9 @@
 
     <div class="signal-strip" aria-label="Recursos da plataforma">
       <div class="signal-track">
-        <span>Perfis esportivos</span><i></i><span>Oportunidades verificadas</span><i></i><span>Match Score</span><i></i><span>Avaliações técnicas</span><i></i><span>Apoio acompanhado</span><i></i>
-        <span aria-hidden="true">Perfis esportivos</span><i aria-hidden="true"></i><span aria-hidden="true">Oportunidades verificadas</span><i aria-hidden="true"></i><span aria-hidden="true">Match Score</span><i aria-hidden="true"></i><span aria-hidden="true">Avaliações técnicas</span><i aria-hidden="true"></i><span aria-hidden="true">Apoio acompanhado</span><i aria-hidden="true"></i>
+        <div class="signal-group">
+          <span>Perfis esportivos</span><i></i><span>Oportunidades verificadas</span><i></i><span>Match Score</span><i></i><span>Avaliações técnicas</span><i></i><span>Apoio acompanhado</span><i></i>
+        </div>
       </div>
     </div>
 
@@ -152,32 +153,54 @@
           <a class="arrow-link" href="#perfis">Ver para quem é <span>→</span></a>
         </div>
 
-        <div class="score-panel reveal" aria-label="Exemplo de Match Score de 94 por cento">
-          <div class="score-panel-top">
-            <span class="verified-pill"><i></i> Perfil verificado</span>
-            <span>MP–094</span>
+        <div class="score-panel reveal" aria-label="Prévia do aplicativo mostrando Match Score de 94 por cento">
+          <div class="score-app-bar">
+            <span class="score-back" aria-hidden="true"><i class="fa-solid fa-arrow-left"></i></span>
           </div>
-          <div class="score-main">
-            <div class="score-ring" data-score="94">
-              <svg viewBox="0 0 180 180" aria-hidden="true">
-                <circle class="ring-track" cx="90" cy="90" r="76"></circle>
-                <circle class="ring-value" cx="90" cy="90" r="76"></circle>
-              </svg>
-              <div><strong class="score-number">0</strong><sup>%</sup><span>compatível</span></div>
+
+          <div class="score-screen">
+            <div class="score-screen-heading">
+              <div><span>Resultado da candidatura</span><h3>Seu Match Score</h3></div>
+              <span class="verified-pill"><i></i> Perfil verificado</span>
             </div>
-            <div class="score-person">
-              <span>Oportunidade demonstrativa</span>
-              <strong>Apoio Circuito Juvenil</strong>
-              <small>Ana Clara × Move Sports</small>
+
+            <div class="opportunity-card">
+              <span class="opportunity-icon" aria-hidden="true"><i class="fa-solid fa-trophy"></i></span>
+              <div><span>Oportunidade</span><strong>Bolsa Circuito Juvenil</strong><small>Move Sports · São Paulo, SP</small></div>
+              <span class="opportunity-status">Inscrições abertas</span>
             </div>
+
+            <div class="score-main">
+              <div class="score-ring" data-score="94">
+                <span class="score-pulse" aria-hidden="true"></span>
+                <svg viewBox="0 0 180 180" aria-hidden="true">
+                  <circle class="ring-track" cx="90" cy="90" r="76"></circle>
+                  <circle class="ring-value" cx="90" cy="90" r="76"></circle>
+                </svg>
+                <div><strong class="score-number">0</strong><sup>%</sup><span>compatibilidade</span></div>
+              </div>
+              <div class="score-person">
+                <span>Compatibilidade alta</span>
+                <strong>Você tem grande potencial para esta oportunidade.</strong>
+                <small>Calculado com base no seu perfil esportivo, objetivos e disponibilidade.</small>
+                <div class="score-tags"><b>Nível compatível</b><b>Objetivos alinhados</b></div>
+              </div>
+            </div>
+
+            <div class="score-factors">
+              <div><span><b>Desempenho esportivo</b><em>96%</em></span><i><u data-width="96"></u></i></div>
+              <div><span><b>Objetivos alinhados</b><em>98%</em></span><i><u data-width="98"></u></i></div>
+              <div><span><b>Categoria e nível</b><em>94%</em></span><i><u data-width="94"></u></i></div>
+              <div><span><b>Disponibilidade</b><em>92%</em></span><i><u data-width="92"></u></i></div>
+            </div>
+
+            <div class="score-insight">
+              <span aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+              <div><strong>Por que vocês combinam?</strong><p>Seu nível competitivo e seus objetivos estão entre os critérios mais valorizados pela instituição.</p></div>
+            </div>
+
+            <div class="score-status"><span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Resultado transparente</span><button type="button" class="js-open-dialog">Ver oportunidade <i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
-          <div class="score-factors">
-            <div><span><b>Necessidade</b><em>100%</em></span><i><u data-width="100"></u></i></div>
-            <div><span><b>Objetivos</b><em>96%</em></span><i><u data-width="96"></u></i></div>
-            <div><span><b>Categoria e nível</b><em>94%</em></span><i><u data-width="94"></u></i></div>
-            <div><span><b>Localização</b><em>88%</em></span><i><u data-width="88"></u></i></div>
-          </div>
-          <div class="score-status"><span>Excelente compatibilidade</span><span>Elegível <i>✓</i></span></div>
         </div>
       </div>
     </section>
@@ -245,11 +268,19 @@
 
     <section class="final-cta" aria-labelledby="cta-title">
       <div class="final-court" aria-hidden="true"><span></span><span></span></div>
-      <i class="fa-solid fa-circle tennis-ball" aria-hidden="true"></i>
+      <div class="tennis-ball" aria-hidden="true"><span></span></div>
       <div class="container final-content reveal">
         <span class="eyebrow eyebrow-light"><span></span> O próximo ponto começa aqui</span>
-        <h2 id="cta-title">O próximo talento espera por <em>uma oportunidade.</em></h2>
-        <button class="button button-large js-open-dialog" type="button">Conhecer o MatchPoint <span>↗</span></button>
+        <h2 id="cta-title"><span>O próximo talento espera por</span><em>uma oportunidade.</em></h2>
+        <p>Entre em uma rede que aproxima quem tem potencial de quem pode abrir caminhos no esporte.</p>
+        <button class="button button-large final-button js-open-dialog" type="button"><span class="button-label">Conhecer o MatchPoint</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <div class="final-audience" aria-label="Feito para atletas, treinadores e instituições">
+          <span><i class="fa-solid fa-person-running" aria-hidden="true"></i> Atletas</span>
+          <i aria-hidden="true"></i>
+          <span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i> Treinadores</span>
+          <i aria-hidden="true"></i>
+          <span><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Instituições</span>
+        </div>
       </div>
     </section>
   </main>
@@ -268,7 +299,7 @@
 
       <nav class="footer-links" aria-label="Navegação do rodapé">
         <span class="footer-label">Navegação</span>
-        <a href="#problema">O desafio</a><a href="#como-funciona">Como funciona</a><a href="#match-score">Match Score</a><a href="#perfis">Para quem é</a><a href="hotsite/index.html">Hotsite do TCC</a>
+        <a href="#problema">O desafio</a><a href="#como-funciona">Como funciona</a><a href="#match-score">Match Score</a><a href="#perfis">Para quem é</a><a href="https://hotsite-zeta.vercel.app/">Hotsite do TCC</a>
       </nav>
 
       <div class="footer-contact">
