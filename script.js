@@ -72,6 +72,12 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.14, rootMargin: '0px 0px -40px' });
 
+document.querySelectorAll('main section').forEach((section) => {
+  section.querySelectorAll('.reveal').forEach((element, index) => {
+    element.style.setProperty('--reveal-delay', `${Math.min(index, 7) * 85}ms`);
+  });
+});
+
 revealElements.forEach((element) => {
   if (!element.classList.contains('is-visible')) revealObserver.observe(element);
 });

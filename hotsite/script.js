@@ -36,6 +36,12 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -35px' });
 
+document.querySelectorAll('main section').forEach((section) => {
+  section.querySelectorAll('.reveal').forEach((element, index) => {
+    element.style.setProperty('--reveal-delay', `${Math.min(index, 8) * 75}ms`);
+  });
+});
+
 document.querySelectorAll('.reveal:not(.shown)').forEach((element) => revealObserver.observe(element));
 
 const observedSections = document.querySelectorAll('main section[id]');

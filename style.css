@@ -427,8 +427,10 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .dialog-success-step { text-align: center; }
 .success-mark { display: grid; place-items: center; width: 74px; height: 74px; margin: 0 auto 25px; border-radius: 50%; background: var(--lime); color: var(--green-dark); font-size: 2rem; font-weight: 700; }
 
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s cubic-bezier(.22,1,.36,1); }
-.reveal.is-visible { opacity: 1; transform: none; }
+.reveal { opacity: 0; filter: blur(7px); transform: translate3d(var(--reveal-x, 0), 38px, 0) scale(.985); transition: opacity .8s ease var(--reveal-delay, 0ms), filter .8s ease var(--reveal-delay, 0ms), transform .9s cubic-bezier(.22,1,.36,1) var(--reveal-delay, 0ms); will-change: opacity, filter, transform; }
+.reveal.is-visible { opacity: 1; filter: blur(0); transform: translate3d(0,0,0) scale(1); }
+.problem-card:nth-child(odd), .profile-card:nth-child(odd), .impact-card:nth-child(odd) { --reveal-x: -12px; }
+.problem-card:nth-child(even), .profile-card:nth-child(even), .impact-card:nth-child(even) { --reveal-x: 12px; }
 .problem-card:nth-child(2), .journey-step:nth-child(2), .profile-card:nth-child(2), .stat:nth-child(2) { transition-delay: .08s; }
 .problem-card:nth-child(3), .journey-step:nth-child(3), .profile-card:nth-child(3), .stat:nth-child(3) { transition-delay: .16s; }
 .journey-step:nth-child(4), .stat:nth-child(4) { transition-delay: .24s; }
@@ -566,7 +568,7 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   .signal-track { animation-duration: var(--marquee-duration, 28s) !important; animation-iteration-count: infinite !important; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal { opacity: 1; filter: none; transform: none; }
 }
 
 @media (hover: hover) {
