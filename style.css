@@ -181,7 +181,7 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
   overflow: hidden;
 }
 
-.hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; transform: scale(1.002); }
+.hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; transform: scale(1.002); animation: heroDrift 16s ease-in-out infinite alternate; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4, 19, 34, .8) 0%, rgba(4, 19, 34, .58) 30%, rgba(4, 19, 34, .12) 55%, transparent 77%), linear-gradient(0deg, rgba(4, 19, 34, .55) 0%, transparent 30%); }
 
 .court-line { display: none; }
@@ -194,6 +194,10 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .hero h1 em { display: block; margin-top: .07em; font-size: 1.2em; line-height: .82; }
 .hero-copy > p { max-width: 630px; margin: 30px 0 38px; color: rgba(255, 255, 255, .76); font-size: clamp(1rem, 1.3vw, 1.18rem); }
 .hero-actions { display: flex; align-items: center; gap: 28px; }
+.hero-copy.is-visible > .eyebrow { animation: heroTextIn .65s .08s both; }
+.hero-copy.is-visible > h1 { animation: heroTextIn .85s .18s both; }
+.hero-copy.is-visible > p { animation: heroTextIn .8s .34s both; }
+.hero-copy.is-visible > .hero-actions { animation: heroTextIn .8s .46s both; }
 .signal-strip { overflow: hidden; padding: 17px 0; border-block: 1px solid rgba(11,31,52,.13); background: var(--lime); }
 .signal-track { display: flex; width: max-content; align-items: center; color: var(--ink); font-size: .71rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; animation: marquee var(--marquee-duration, 28s) linear infinite; will-change: transform; }
 .signal-group { display: flex; flex: none; align-items: center; gap: 28px; padding-right: 28px; }
@@ -208,6 +212,8 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 80px; }
 .problem-card { position: relative; display: flex; min-height: 430px; padding: 32px; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255, 254, 248, .55); overflow: hidden; transition: transform .35s ease, box-shadow .35s ease, background .35s ease; }
 .problem-card:hover { transform: translateY(-8px); border-color: rgba(44,120,64,.28); background: var(--white); box-shadow: var(--shadow); }
+.problem-card::before, .profile-card::before { position: absolute; z-index: 3; width: 42%; height: 180%; top: -40%; left: -72%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent); content: ""; pointer-events: none; transform: rotate(18deg); transition: left .75s cubic-bezier(.22,1,.36,1); }
+.problem-card:hover::before, .profile-card:hover::before { left: 130%; }
 .feature-card { background: var(--blue); color: var(--white); }
 .feature-card:hover { background: var(--blue-deep); }
 .card-number { font-size: .65rem; font-weight: 700; letter-spacing: .12em; opacity: .55; }
@@ -311,11 +317,15 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .profile-top { display: flex; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid currentColor; font-size: .65rem; font-weight: 600; text-transform: uppercase; }
 .profile-top i { font-style: normal; letter-spacing: .11em; }
 .profile-visual { position: relative; display: grid; place-items: center; width: 176px; height: 176px; margin: 42px auto 32px; border: 1px solid currentColor; border-radius: 50%; }
+.profile-card.is-visible .profile-visual { animation: visualFloat 5s ease-in-out infinite; }
+.profile-card:nth-child(2).is-visible .profile-visual { animation-delay: -.9s; }
+.profile-card:nth-child(3).is-visible .profile-visual { animation-delay: -1.8s; }
 .profile-visual::before, .profile-visual::after { position: absolute; border: 1px solid currentColor; border-radius: 50%; content: ""; opacity: .35; }
 .profile-visual::before { inset: 14px; }
 .profile-visual::after { inset: 31px; }
 .profile-visual > i { position: relative; z-index: 1; font-size: 4rem; }
 .court-orbit { position: absolute; width: 16px; height: 16px; top: 21px; right: 11px; border-radius: 50%; background: currentColor; }
+.profile-card.is-visible .court-orbit { animation: orbitPulse 2.2s ease-in-out infinite; }
 .profile-card h3 { max-width: 290px; margin-bottom: 18px; font-size: 1.45rem; line-height: 1.25; letter-spacing: -.03em; }
 .profile-card ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; font-size: .76rem; opacity: .72; }
 .profile-card li::before { margin-right: 9px; content: "—"; }
@@ -429,6 +439,7 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 
 .reveal { opacity: 0; filter: blur(7px); transform: translate3d(var(--reveal-x, 0), 38px, 0) scale(.985); transition: opacity .8s ease var(--reveal-delay, 0ms), filter .8s ease var(--reveal-delay, 0ms), transform .9s cubic-bezier(.22,1,.36,1) var(--reveal-delay, 0ms); will-change: opacity, filter, transform; }
 .reveal.is-visible { opacity: 1; filter: blur(0); transform: translate3d(0,0,0) scale(1); }
+.reveal.is-visible .eyebrow > span, .reveal.is-visible.eyebrow > span { animation: lineGrow .75s cubic-bezier(.22,1,.36,1) both; transform-origin: left; }
 .problem-card:nth-child(odd), .profile-card:nth-child(odd), .impact-card:nth-child(odd) { --reveal-x: -12px; }
 .problem-card:nth-child(even), .profile-card:nth-child(even), .impact-card:nth-child(even) { --reveal-x: 12px; }
 .problem-card:nth-child(2), .journey-step:nth-child(2), .profile-card:nth-child(2), .stat:nth-child(2) { transition-delay: .08s; }
@@ -438,6 +449,11 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .journey-step:nth-child(6) { transition-delay: .4s; }
 
 @keyframes marquee { to { transform: translateX(calc(-1 * var(--marquee-distance, 50%))); } }
+@keyframes heroDrift { from { transform: scale(1.002) translate3d(0,0,0); } to { transform: scale(1.045) translate3d(-.8%, -.4%, 0); } }
+@keyframes heroTextIn { from { opacity: 0; filter: blur(8px); transform: translateY(28px); } to { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes visualFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes orbitPulse { 0%, 100% { box-shadow: 0 0 0 0 currentColor; transform: scale(.88); } 50% { box-shadow: 0 0 0 8px transparent; transform: scale(1); } }
 @keyframes scorePulse { 0% { opacity: .7; transform: scale(.82); } 100% { opacity: 0; transform: scale(1.28); } }
 @keyframes ballFloat { 0%, 100% { transform: translate3d(0, 0, 0) rotate(-12deg); } 50% { transform: translate3d(-16px, 18px, 0) rotate(8deg); } }
 @keyframes dialogIn { from { opacity: 0; transform: translateY(20px) scale(.97); } to { opacity: 1; transform: none; } }

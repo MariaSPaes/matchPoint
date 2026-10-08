@@ -53,7 +53,7 @@ h1, h2, h3, p { margin-top: 0; }
 .menu-button, .mobile-menu { display: none; }
 
 .tcc-hero { position: relative; min-height: 780px; height: 100svh; max-height: 980px; background: var(--ink); color: var(--white); overflow: hidden; }
-.hero-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.72) saturate(.82); }
+.hero-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.72) saturate(.82); animation: heroDrift 17s ease-in-out infinite alternate; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3, 24, 48, .86) 0%, rgba(3, 24, 48, .58) 42%, rgba(3, 24, 48, .14) 72%), linear-gradient(0deg, rgba(3, 18, 31, .62) 0%, transparent 48%); }
 .hero-content { position: relative; z-index: 2; display: flex; min-height: 100%; align-items: center; padding-top: 95px; padding-bottom: 90px; }
 .hero-copy { max-width: 660px; }
@@ -64,6 +64,10 @@ h1, h2, h3, p { margin-top: 0; }
 .hero-copy h1 em { display: block; color: var(--lime); font-family: var(--serif); font-size: .82em; font-style: normal; font-weight: 400; letter-spacing: 0; line-height: .92; -webkit-text-stroke: 1px currentColor; white-space: nowrap; }
 .hero-copy > p { max-width: 680px; margin: 28px 0 32px; color: rgba(255, 255, 255, .72); font-size: .96rem; line-height: 1.6; }
 .hero-actions { display: flex; align-items: center; gap: 28px; }
+.hero-copy.shown > .eyebrow { animation: heroTextIn .65s .08s both; }
+.hero-copy.shown > h1 { animation: heroTextIn .85s .18s both; }
+.hero-copy.shown > p { animation: heroTextIn .8s .34s both; }
+.hero-copy.shown > .hero-actions { animation: heroTextIn .8s .46s both; }
 .button { display: inline-flex; min-height: 56px; padding: 0 25px; align-items: center; justify-content: center; gap: 14px; border: 1px solid var(--lime); border-radius: 999px; background: var(--lime); color: var(--ink); font-size: .72rem; font-weight: 700; cursor: pointer; transition: transform .22s ease, box-shadow .22s ease; }
 .button:hover { box-shadow: 0 15px 35px rgba(205, 255, 86, .2); transform: translateY(-3px); }
 .text-link { display: inline-flex; align-items: center; gap: 10px; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: .68rem; font-weight: 600; }
@@ -103,7 +107,9 @@ h1, h2, h3, p { margin-top: 0; }
 .overview-heading { margin-bottom: var(--heading-gap); }
 .overview .section-heading h2 { max-width: 760px; font-size: clamp(2.65rem, 4vw, 4.1rem); }
 .overview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
-.overview-card { min-height: 252px; padding: 28px; border: 1px solid var(--line); border-radius: 23px; background: rgba(255, 254, 248, .65); }
+.overview-card { position: relative; min-height: 252px; padding: 28px; border: 1px solid var(--line); border-radius: 23px; background: rgba(255, 254, 248, .65); overflow: hidden; }
+.overview-card::before, .member-card::before, .role-card::before { position: absolute; z-index: 2; width: 38%; height: 180%; top: -40%; left: -70%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent); content: ""; pointer-events: none; transform: rotate(18deg); transition: left .75s cubic-bezier(.22,1,.36,1); }
+.overview-card:hover::before, .member-card:hover::before, .role-card:hover::before { left: 132%; }
 .overview-card > span, .content-label { color: var(--green); font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .overview-card h3 { margin: 34px 0 14px; font-size: 1.2rem; line-height: 1.25; letter-spacing: -.035em; }
 .overview-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.6; }
@@ -118,6 +124,8 @@ h1, h2, h3, p { margin-top: 0; }
 .team-photo { position: relative; height: clamp(300px, 39vw, 500px); margin: var(--heading-gap) 0 0; border: 1px solid rgba(255, 255, 255, .22); border-radius: 24px; overflow: hidden; background: var(--ink); }
 .team-photo::after { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4, 18, 30, .74) 0%, rgba(4, 18, 30, .05) 56%); content: ""; }
 .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+.team-photo img { transition: transform 1.1s cubic-bezier(.22,1,.36,1), filter .6s ease; }
+.team-photo:hover img { filter: saturate(1.06); transform: scale(1.025); }
 .team-photo figcaption { position: absolute; z-index: 1; right: 26px; bottom: 20px; left: 26px; color: var(--white); font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .team-names { display: grid; grid-template-columns: repeat(5, 1fr); margin: 16px 0 60px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 15px; overflow: hidden; }
 .team-names span { padding: 16px 20px; border-right: 1px solid rgba(255, 255, 255, .2); color: rgba(255, 255, 255, .9); font-size: .9rem; font-weight: 600; text-align: center; }
@@ -130,7 +138,7 @@ h1, h2, h3, p { margin-top: 0; }
 .team-intro .content-label { color: var(--lime); }
 .team-intro p { max-width: 760px; margin: 0; color: rgba(255, 255, 255, .76); font-size: .92rem; line-height: 1.75; }
 .member-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--grid-gap); }
-.member-card { padding: 30px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 20px; background: rgba(255, 255, 255, .045); }
+.member-card { position: relative; padding: 30px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 20px; background: rgba(255, 255, 255, .045); overflow: hidden; }
 .member-card-wide { grid-column: 1 / -1; }
 .member-head { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start; }
 .member-head > span { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); font-size: .68rem; font-weight: 700; }
@@ -161,7 +169,7 @@ h1, h2, h3, p { margin-top: 0; }
 
 .solution { background: var(--ink); }
 .role-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--grid-gap); margin-top: var(--heading-gap); }
-.role-card { min-height: 270px; padding: 24px; border: 1px solid rgba(255, 255, 255, .18); border-radius: 20px; background: rgba(255, 255, 255, .035); }
+.role-card { position: relative; min-height: 270px; padding: 24px; border: 1px solid rgba(255, 255, 255, .18); border-radius: 20px; background: rgba(255, 255, 255, .035); overflow: hidden; }
 .role-card > span { color: var(--lime); font-size: .65rem; font-weight: 700; }
 .role-card > i { display: grid; width: 54px; height: 54px; margin: 34px 0 28px; place-items: center; border: 1px solid var(--lime); border-radius: 50%; color: var(--lime); font-size: 1.15rem; }
 .role-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
@@ -226,8 +234,13 @@ h1, h2, h3, p { margin-top: 0; }
 
 .reveal { opacity: 0; filter: blur(7px); transform: translate3d(var(--reveal-x, 0), 38px, 0) scale(.985); transition: opacity .8s ease var(--reveal-delay, 0ms), filter .8s ease var(--reveal-delay, 0ms), transform .9s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay, 0ms); will-change: opacity, filter, transform; }
 .reveal.shown { opacity: 1; filter: blur(0); transform: translate3d(0,0,0) scale(1); }
+.reveal.shown .eyebrow i, .reveal.shown.eyebrow i { animation: lineGrow .75s cubic-bezier(.22,1,.36,1) both; transform-origin: left; }
 .overview-card:nth-child(odd), .member-card:nth-child(odd), .role-card:nth-child(odd), .process-list li:nth-child(odd) { --reveal-x: -12px; }
 .overview-card:nth-child(even), .member-card:nth-child(even), .role-card:nth-child(even), .process-list li:nth-child(even) { --reveal-x: 12px; }
+
+@keyframes heroDrift { from { transform: scale(1); } to { transform: scale(1.045) translate3d(-.7%, -.4%, 0); } }
+@keyframes heroTextIn { from { opacity: 0; filter: blur(8px); transform: translateY(28px); } to { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 @media (max-width: 1080px) {
   .header-inner { grid-template-columns: 140px 1fr 150px; }
