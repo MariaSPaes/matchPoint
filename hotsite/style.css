@@ -389,3 +389,113 @@ h1, h2, h3, p { margin-top: 0; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; filter: none; transform: none; }
 }
+
+/* Mobile content rails and media treatment. */
+.carousel-controls { display: none; }
+
+@media (max-width: 640px) {
+  :root { --mobile-gutter: 14px; }
+  body { min-width: 280px; }
+  .container { width: calc(100% - (var(--mobile-gutter) * 2)); }
+  .section { padding-block: clamp(68px, 18vw, 82px); }
+  .section-number { font-size: .68rem; }
+  .section-heading, .team-heading { gap: 22px; }
+  .section-heading h2, .team-heading h2, .document-copy h2 { line-height: 1.03; }
+
+  .mobile-carousel {
+    display: flex !important;
+    width: 100%;
+    max-width: none;
+    padding: 2px var(--mobile-gutter) 18px;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--mobile-gutter);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-carousel.container {
+    width: 100%;
+    margin-inline: 0;
+  }
+  .mobile-carousel::-webkit-scrollbar { display: none; }
+  .mobile-carousel > * {
+    width: auto;
+    min-width: 0;
+    flex: 0 0 min(84vw, 350px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .overview-grid, .role-grid, .process-list { margin-top: 36px; }
+  .overview-card, .member-card, .role-card { min-height: 340px; }
+  .member-card { min-height: 510px; }
+  .role-card { min-height: 270px; }
+  .process-list li, .process-list li:nth-child(4) {
+    display: grid;
+    min-height: 330px;
+    padding: 24px;
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(255,254,248,.72);
+  }
+  .process-list li > span { padding-top: 0; }
+  .process-list li > i { margin: 24px 0 20px; }
+  .member-card-wide { grid-column: auto; }
+
+  .carousel-controls {
+    display: flex;
+    width: calc(100% - (var(--mobile-gutter) * 2));
+    margin: 4px auto 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .carousel-status { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .08em; }
+  .carousel-actions { display: flex; gap: 8px; }
+  .carousel-button {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid rgba(11,31,52,.2);
+    border-radius: 50%;
+    background: rgba(255,255,255,.72);
+    color: var(--ink);
+    font: inherit;
+  }
+  .carousel-button:disabled { opacity: .38; }
+  .team-section .carousel-status, .solution .carousel-status { color: rgba(255,255,255,.66); }
+  .team-section .carousel-button, .solution .carousel-button { border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.08); color: var(--white); }
+
+  .team-photo {
+    height: auto;
+    aspect-ratio: auto;
+    margin-top: 30px;
+    border-radius: 18px;
+    box-shadow: 0 22px 55px rgba(0,0,0,.3);
+  }
+  .team-photo img { width: 100%; height: auto; object-fit: contain; object-position: center; }
+  .team-photo::after { background: linear-gradient(0deg, rgba(4,18,30,.64), transparent 46%); }
+  .team-photo figcaption { right: 16px; bottom: 12px; left: 16px; font-size: .58rem; line-height: 1.4; }
+  .team-intro p, .member-card > p { font-size: .92rem; }
+  .member-card li { font-size: .84rem; }
+  .project-summary, .project-focus, .core-flow, .document-layout { gap: 16px; }
+  .thanks-copy p, .document-copy > p { font-size: .94rem; }
+  .button, .document-button { min-height: 48px; }
+}
+
+@media (max-width: 340px) {
+  :root { --mobile-gutter: 12px; }
+  .section-heading h2, .team-heading h2, .document-copy h2, .closing h2 { font-size: 2.05rem; }
+  .hero-copy h1 { font-size: clamp(2.8rem, 16vw, 3.3rem); }
+  .mobile-carousel > * { flex-basis: 86vw; }
+  .overview-card, .member-card, .role-card { padding: 20px; }
+  .member-card { min-height: 540px; }
+  .member-head { grid-template-columns: 34px minmax(0,1fr); }
+  .member-head > span { width: 34px; height: 34px; }
+}

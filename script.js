@@ -9,6 +9,60 @@ const formStep = document.querySelector('.dialog-form-step');
 const successStep = document.querySelector('.dialog-success-step');
 const signalTrack = document.querySelector('.signal-track');
 
+const setupMobileCarousels = () => {
+  document.querySelectorAll('.mobile-carousel').forEach((track, carouselIndex) => {
+    if (track.dataset.carouselReady === 'true') return;
+    const items = [...track.children];
+    if (items.length < 2) return;
+
+    track.dataset.carouselReady = 'true';
+    track.setAttribute('role', 'region');
+    track.setAttribute('aria-roledescription', 'carrossel');
+    track.setAttribute('aria-label', track.dataset.carouselLabel || `Carrossel ${carouselIndex + 1}`);
+    track.setAttribute('tabindex', '0');
+
+    const controls = document.createElement('div');
+    controls.className = 'carousel-controls';
+    controls.innerHTML = `<span class="carousel-status" aria-live="polite">1 / ${items.length}</span><span class="carousel-actions"><button class="carousel-button carousel-prev" type="button" aria-label="Item anterior">←</button><button class="carousel-button carousel-next" type="button" aria-label="Próximo item">→</button></span>`;
+    track.insertAdjacentElement('afterend', controls);
+
+    const status = controls.querySelector('.carousel-status');
+    const previous = controls.querySelector('.carousel-prev');
+    const next = controls.querySelector('.carousel-next');
+    let activeIndex = 0;
+    let scrollFrame;
+
+    const update = () => {
+      const currentLeft = track.scrollLeft;
+      activeIndex = items.reduce((closest, item, index) => (
+        Math.abs(item.offsetLeft - currentLeft) < Math.abs(items[closest].offsetLeft - currentLeft) ? index : closest
+      ), 0);
+      status.textContent = `${activeIndex + 1} / ${items.length}`;
+      previous.disabled = activeIndex === 0;
+      next.disabled = activeIndex === items.length - 1;
+    };
+
+    const goTo = (index) => {
+      const target = items[Math.max(0, Math.min(items.length - 1, index))];
+      track.scrollTo({ left: target.offsetLeft - parseFloat(getComputedStyle(track).paddingLeft), behavior: 'smooth' });
+    };
+
+    previous.addEventListener('click', () => goTo(activeIndex - 1));
+    next.addEventListener('click', () => goTo(activeIndex + 1));
+    track.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(activeIndex - 1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); goTo(activeIndex + 1); }
+    });
+    track.addEventListener('scroll', () => {
+      window.cancelAnimationFrame(scrollFrame);
+      scrollFrame = window.requestAnimationFrame(update);
+    }, { passive: true });
+    update();
+  });
+};
+
+setupMobileCarousels();
+
 const updateHeader = () => {
   header.classList.toggle('scrolled', window.scrollY > 24);
 };

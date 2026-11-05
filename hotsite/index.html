@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css">
-  <link rel="stylesheet" href="style.css?v=33">
-  <script src="script.js?v=4" defer></script>
+  <link rel="stylesheet" href="style.css?v=34">
+  <script src="script.js?v=5" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -82,7 +82,7 @@
         <span class="section-number">01 / Nossa motivação</span>
         <div><span class="eyebrow"><i></i> Por que escolhemos este tema</span><h2 id="overview-title">Como surgiu <em>o MatchPoint.</em></h2></div>
       </div>
-      <div class="container overview-grid">
+      <div class="container overview-grid mobile-carousel" data-carousel-label="Visão geral do projeto">
         <article class="overview-card reveal"><span>O que percebemos</span><h3>Muitas oportunidades circulam apenas em redes e contatos já estabelecidos.</h3><p>Isso pode afastar atletas que têm potencial, mas pouco acesso a treinadores, instituições e processos seletivos.</p></article>
         <article class="overview-card highlight reveal"><span>O que decidimos investigar</span><h3>Se a tecnologia poderia tornar esse caminho mais claro e organizado.</h3><p>Em vez de prometer resolver todo o cenário esportivo, delimitamos uma jornada possível de pesquisar, projetar e demonstrar.</p></article>
         <article class="overview-card reveal"><span>O que construímos</span><h3>Um projeto acadêmico completo, da ideia à validação.</h3><p>Reunimos requisitos, regras de negócio, identidade visual, 38 telas, protótipo navegável, estrutura web, banco de dados, testes e documentação.</p></article>
@@ -103,7 +103,7 @@
 
         <div class="team-intro reveal"><span class="content-label">Como trabalhamos</span><p>Todos nós participamos de todas as etapas do MatchPoint: pesquisa, planejamento, criação das telas, ligação dos fluxos, desenvolvimento das funcionalidades, testes e documentação. Os cartões abaixo mostram apenas os pontos em que cada integrante teve maior participação, mas o projeto inteiro foi construído pelos cinco.</p></div>
 
-        <div class="member-grid">
+        <div class="member-grid mobile-carousel" data-carousel-label="Integrantes da equipe">
           <article class="member-card reveal"><div class="member-head"><span>01</span><div><h3>Renato José de Andrade Pereira</h3><small>Dados, integrações e funcionalidades</small></div></div><p>Participou de todas as etapas do projeto e teve maior atuação na estrutura dos dados e nas funcionalidades internas que conectam os diferentes perfis do sistema.</p><ul><li>Modelou entidades, relacionamentos, tabelas e dados de teste no MySQL.</li><li>Implementou cadastro, login, sessões, perfis de acesso, oportunidades e candidaturas.</li><li>Desenvolveu avaliações, documentos, pareceres, notificações, denúncias, verificações e área administrativa.</li></ul></article>
           <article class="member-card reveal"><div class="member-head"><span>02</span><div><h3>Maria Eduarda Souza Paes</h3><small>Experiência, protótipo e apresentação</small></div></div><p>Participou de todas as etapas do projeto, desenvolveu funcionalidades e teve maior atuação na criação e ligação das telas, na experiência visual e na apresentação do trabalho.</p><ul><li>Desenvolveu a identidade, componentes e telas de atleta, treinador, instituição e administração.</li><li>Fez a ligação das telas no Figma, construiu o protótipo navegável e revisou usabilidade e consistência.</li><li>Desenvolveu o hotsite e colaborou na implementação, nos testes, na documentação e na apresentação final.</li></ul></article>
           <article class="member-card reveal"><div class="member-head"><span>03</span><div><h3>Lucas Robson Pedroso de Carvalho</h3><small>Planejamento e base técnica</small></div></div><p>Participou de todas as etapas do projeto e teve maior atuação no planejamento técnico, na organização das atividades e na estrutura que sustentou o desenvolvimento.</p><ul><li>Definiu requisitos não funcionais e o fluxo do responsável por atletas menores.</li><li>Criou cronograma, organizou tarefas no PrumoBoard e apoiou a divisão do trabalho.</li><li>Implementou a base em HTML, CSS e JavaScript, responsividade, hospedagem e configuração MySQL.</li></ul></article>
@@ -132,7 +132,7 @@
         <div><span class="eyebrow light"><i></i> Ecossistema MatchPoint</span><h2 id="solution-title">Perfis bem definidos. <em>Jornadas conectadas.</em></h2></div>
       </div>
 
-      <div class="container role-grid">
+      <div class="container role-grid mobile-carousel" data-carousel-label="Perfis do ecossistema MatchPoint">
         <article class="role-card reveal"><span>01</span><i class="fa-solid fa-person-running" aria-hidden="true"></i><h3>Atleta</h3><p>Constrói o perfil esportivo, encontra oportunidades e acompanha candidaturas.</p></article>
         <article class="role-card reveal"><span>02</span><i class="fa-solid fa-people-roof" aria-hidden="true"></i><h3>Responsável</h3><p>Administra as ações do atleta menor diretamente pela conta vinculada.</p></article>
         <article class="role-card reveal"><span>03</span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i><h3>Treinador</h3><p>Publica oportunidades técnicas e registra avaliações solicitadas.</p></article>
@@ -151,7 +151,7 @@
         <span class="section-number">05 / Como trabalhamos</span>
         <div><span class="eyebrow"><i></i> Nosso processo na prática</span><h2 id="process-title">Não começamos pelas telas. <em>Começamos entendendo o problema.</em></h2></div>
       </div>
-      <ol class="container process-list">
+      <ol class="container process-list mobile-carousel" data-carousel-label="Etapas do processo de desenvolvimento">
         <li class="reveal"><span>01</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><div><small>Pesquisar</small><h3>Contexto e referências</h3><p>Estudamos o público e soluções semelhantes para delimitar um problema que coubesse no projeto.</p></div></li>
         <li class="reveal"><span>02</span><i class="fa-solid fa-list-check" aria-hidden="true"></i><div><small>Documentar</small><h3>Requisitos e regras</h3><p>Registramos objetivos, perfis, critérios, responsabilidades, restrições e requisitos funcionais e não funcionais.</p></div></li>
         <li class="reveal"><span>03</span><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><div><small>Arquitetar</small><h3>Dados e jornadas</h3><p>Modelamos entidades no DER e conectamos fluxos de atleta, responsável, treinador, instituição e administrador.</p></div></li>
