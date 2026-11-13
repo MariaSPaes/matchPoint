@@ -234,3 +234,67 @@ window.addEventListener('resize', () => {
   resizeFrame = window.requestAnimationFrame(setupInfiniteCarousel);
 });
 updateHeader();
+
+const setupTennisMotion = () => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const motionLayer = document.createElement('div');
+  motionLayer.className = 'tennis-motion-layer';
+  motionLayer.setAttribute('aria-hidden', 'true');
+  motionLayer.innerHTML = '<span class="rally-trail"></span><span class="scroll-tennis-ball"></span><span class="ball-shadow"></span>';
+  document.body.appendChild(motionLayer);
+
+  const ball = motionLayer.querySelector('.scroll-tennis-ball');
+  const shadow = motionLayer.querySelector('.ball-shadow');
+  let ticking = false;
+
+  const updateMotion = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, window.scrollY / maxScroll);
+    const wave = Math.sin(progress * Math.PI * 7);
+    const side = Math.cos(progress * Math.PI * 4);
+    const x = window.innerWidth < 620 ? 86 + wave * 5 : 89 + wave * 7 + side * 2;
+    const y = 18 + progress * 65;
+    document.documentElement.style.setProperty('--rally-progress', progress.toFixed(4));
+    document.documentElement.style.setProperty('--rally-x', `${x.toFixed(2)}vw`);
+    document.documentElement.style.setProperty('--rally-y', `${y.toFixed(2)}vh`);
+    document.documentElement.style.setProperty('--rally-spin', `${Math.round(progress * 1480)}deg`);
+    document.documentElement.style.setProperty('--hero-scroll', `${Math.min(window.scrollY, window.innerHeight) * .12}px`);
+    ball.classList.toggle('is-serving', window.scrollY < 80);
+    shadow.style.opacity = String(.14 + Math.abs(wave) * .16);
+    ticking = false;
+  };
+
+  const requestMotion = () => {
+    if (reduceMotion.matches || ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateMotion);
+  };
+
+  if (!reduceMotion.matches) {
+    updateMotion();
+    window.addEventListener('scroll', requestMotion, { passive: true });
+    window.addEventListener('resize', requestMotion, { passive: true });
+  }
+
+  const tiltCards = document.querySelectorAll('.profile-card, .journey-step, .impact-card, .score-panel');
+  tiltCards.forEach((card) => {
+    card.classList.add('motion-card');
+    card.addEventListener('pointermove', (event) => {
+      if (!finePointer.matches || reduceMotion.matches) return;
+      const bounds = card.getBoundingClientRect();
+      const px = (event.clientX - bounds.left) / bounds.width;
+      const py = (event.clientY - bounds.top) / bounds.height;
+      card.style.setProperty('--tilt-x', `${((.5 - py) * 7).toFixed(2)}deg`);
+      card.style.setProperty('--tilt-y', `${((px - .5) * 8).toFixed(2)}deg`);
+      card.style.setProperty('--glow-x', `${(px * 100).toFixed(1)}%`);
+      card.style.setProperty('--glow-y', `${(py * 100).toFixed(1)}%`);
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+    });
+  });
+};
+
+setupTennisMotion();

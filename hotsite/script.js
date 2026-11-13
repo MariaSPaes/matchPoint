@@ -116,3 +116,59 @@ window.addEventListener('resize', () => { if (window.innerWidth > 840) closeMenu
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 updateHeader();
+
+const setupTennisMotion = () => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const motionLayer = document.createElement('div');
+  motionLayer.className = 'tennis-motion-layer';
+  motionLayer.setAttribute('aria-hidden', 'true');
+  motionLayer.innerHTML = '<span class="rally-trail"></span><span class="scroll-tennis-ball"></span><span class="ball-shadow"></span>';
+  document.body.appendChild(motionLayer);
+
+  let ticking = false;
+  const updateMotion = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, window.scrollY / maxScroll);
+    const wave = Math.sin(progress * Math.PI * 8);
+    const x = window.innerWidth < 620 ? 86 + wave * 5 : 88 + wave * 8;
+    const y = 17 + progress * 67;
+    document.documentElement.style.setProperty('--rally-progress', progress.toFixed(4));
+    document.documentElement.style.setProperty('--rally-x', `${x.toFixed(2)}vw`);
+    document.documentElement.style.setProperty('--rally-y', `${y.toFixed(2)}vh`);
+    document.documentElement.style.setProperty('--rally-spin', `${Math.round(progress * 1680)}deg`);
+    document.documentElement.style.setProperty('--hero-scroll', `${Math.min(window.scrollY, window.innerHeight) * .1}px`);
+    document.documentElement.style.setProperty('--photo-parallax', `${Math.max(-22, Math.min(22, (document.querySelector('.team-photo')?.getBoundingClientRect().top || 0) * -.025))}px`);
+    ticking = false;
+  };
+  const requestMotion = () => {
+    if (reduceMotion.matches || ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateMotion);
+  };
+  if (!reduceMotion.matches) {
+    updateMotion();
+    window.addEventListener('scroll', requestMotion, { passive: true });
+    window.addEventListener('resize', requestMotion, { passive: true });
+  }
+
+  document.querySelectorAll('.overview-card, .member-card, .role-card, .process-list li, .project-summary article').forEach((card) => {
+    card.classList.add('motion-card');
+    card.addEventListener('pointermove', (event) => {
+      if (!finePointer.matches || reduceMotion.matches) return;
+      const bounds = card.getBoundingClientRect();
+      const px = (event.clientX - bounds.left) / bounds.width;
+      const py = (event.clientY - bounds.top) / bounds.height;
+      card.style.setProperty('--tilt-x', `${((.5 - py) * 6).toFixed(2)}deg`);
+      card.style.setProperty('--tilt-y', `${((px - .5) * 7).toFixed(2)}deg`);
+      card.style.setProperty('--glow-x', `${(px * 100).toFixed(1)}%`);
+      card.style.setProperty('--glow-y', `${(py * 100).toFixed(1)}%`);
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+    });
+  });
+};
+
+setupTennisMotion();

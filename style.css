@@ -709,3 +709,60 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
   .final-content h2 > span { font-size: 2.3rem; }
   .final-content h2 em { font-size: 2.85rem; }
 }
+
+/* Tennis motion system: the ball becomes the visual thread between sections. */
+.tennis-motion-layer { position: fixed; z-index: 18; inset: 0; pointer-events: none; overflow: hidden; }
+.scroll-tennis-ball, .ball-shadow { position: absolute; left: var(--rally-x, 90vw); top: var(--rally-y, 18vh); transform: translate(-50%, -50%); }
+.scroll-tennis-ball {
+  width: clamp(34px, 3.25vw, 54px); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 32% 27%, #f1ff9f 0 8%, #cfff57 30%, #a8dc31 72%, #6c9b17 100%);
+  box-shadow: 0 0 0 1px rgba(10,36,30,.16), 0 8px 22px rgba(4,22,32,.28), 0 0 30px rgba(196,255,69,.28);
+  transform: translate(-50%, -50%) rotate(var(--rally-spin, 0deg));
+  transition: left .26s cubic-bezier(.22,1,.36,1), top .26s cubic-bezier(.22,1,.36,1);
+}
+.scroll-tennis-ball::before, .scroll-tennis-ball::after { position: absolute; inset: 9% 19%; border: 2px solid rgba(59,99,16,.48); border-top-color: transparent; border-bottom-color: transparent; border-radius: 50%; content: ""; }
+.scroll-tennis-ball::after { transform: rotate(180deg); }
+.scroll-tennis-ball.is-serving { animation: serveBounce 1.3s cubic-bezier(.34,1.56,.64,1) infinite; }
+.ball-shadow { width: 48px; height: 13px; border-radius: 50%; background: rgba(3,18,31,.48); filter: blur(7px); transform: translate(-50%, 28px) scale(calc(.7 + var(--rally-progress, 0) * .35)); transition: left .26s cubic-bezier(.22,1,.36,1), top .26s cubic-bezier(.22,1,.36,1), opacity .2s ease; }
+.rally-trail { position: absolute; right: 6.8vw; top: 11vh; width: 2px; height: 78vh; opacity: .2; background: linear-gradient(transparent, var(--lime) 18%, rgba(255,255,255,.7) 52%, var(--lime) 82%, transparent); transform: skewX(-3deg); }
+.rally-trail::before { position: absolute; inset: 0 -14px; border-left: 1px dashed rgba(205,255,86,.6); border-radius: 50%; content: ""; animation: trailPulse 2.4s ease-in-out infinite; }
+.hero-image { transform: scale(1.025) translate3d(0, calc(var(--hero-scroll, 0px) * .22), 0); }
+.court-line { animation: courtSweep 7s ease-in-out infinite alternate; }
+.signal-strip { box-shadow: 0 10px 28px rgba(127,190,28,.16); }
+.signal-strip::after { position: absolute; top: 50%; left: 8%; width: 13px; height: 13px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 4px rgba(11,31,52,.12); content: ""; animation: stripRally 5s ease-in-out infinite; }
+.profiles, .impact { background-image: radial-gradient(circle at 86% 20%, rgba(205,255,86,.13), transparent 22%); background-size: 130% 130%; animation: ambientCourt 12s ease-in-out infinite alternate; }
+.journey::after { position: absolute; right: -8vw; bottom: -18vw; width: 42vw; aspect-ratio: 1; border: 1px solid rgba(205,255,86,.14); border-radius: 50%; box-shadow: 0 0 0 5vw rgba(205,255,86,.025), 0 0 0 10vw rgba(205,255,86,.018); content: ""; animation: orbitTurn 18s linear infinite; pointer-events: none; }
+.motion-card { --tilt-x: 0deg; --tilt-y: 0deg; transform-style: preserve-3d; transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .4s ease, border-color .3s ease; }
+.motion-card.is-visible:hover { transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-7px); }
+.motion-card::after { background-image: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(205,255,86,.18), transparent 34%); }
+.profile-visual, .step-symbol, .impact-card > i { transform: translateZ(24px); }
+.score-visual { animation: scoreHover 5.5s ease-in-out infinite; }
+.score-panel::before { animation: scanCourt 4.8s ease-in-out infinite; }
+.women-photo { animation: photoBreath 8s ease-in-out infinite alternate; }
+.final-ball { animation: finalBallRally 4.5s cubic-bezier(.45,.05,.55,.95) infinite; }
+
+@keyframes serveBounce { 0%,100% { margin-top: 0; } 48% { margin-top: -12px; } 65% { margin-top: 3px; } }
+@keyframes trailPulse { 0%,100% { opacity: .3; transform: scaleY(.7); } 50% { opacity: .9; transform: scaleY(1); } }
+@keyframes stripRally { 0%,100% { left: 6%; transform: translateY(-50%) scale(.8); } 50% { left: 92%; transform: translateY(-50%) scale(1.15); } }
+@keyframes ambientCourt { to { background-position: 20% 80%; } }
+@keyframes orbitTurn { to { transform: rotate(360deg); } }
+@keyframes courtSweep { to { opacity: .55; transform: translate3d(2vw,-1vh,0); } }
+@keyframes scoreHover { 0%,100% { transform: translateY(0) rotate(-.4deg); } 50% { transform: translateY(-9px) rotate(.4deg); } }
+@keyframes scanCourt { 0%,100% { opacity: .15; transform: translateX(-16%); } 50% { opacity: .5; transform: translateX(16%); } }
+@keyframes photoBreath { to { transform: scale(1.025); } }
+@keyframes finalBallRally { 0%,100% { transform: translate(0,0) rotate(0deg); } 38% { transform: translate(-20px,-22px) rotate(140deg); } 70% { transform: translate(10px,-7px) rotate(260deg); } }
+
+@media (max-width: 640px) {
+  .tennis-motion-layer { z-index: 12; }
+  .scroll-tennis-ball { width: 31px; opacity: .8; }
+  .rally-trail { right: 8vw; opacity: .11; }
+  .ball-shadow { width: 32px; }
+  .motion-card.is-visible:hover { transform: none; }
+  .journey::after { width: 74vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tennis-motion-layer { display: none; }
+  .hero-image, .court-line, .profiles, .impact, .journey::after, .score-visual, .score-panel::before, .women-photo, .final-ball { animation: none !important; transform: none !important; }
+  .motion-card, .motion-card.is-visible:hover { transform: none !important; transition: none !important; }
+}
