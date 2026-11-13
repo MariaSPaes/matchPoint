@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css">
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=26">
   <script src="script.js?v=5" defer></script>
 </head>
 <body>
@@ -27,7 +27,6 @@
       </a>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
-        <a href="#problema">O desafio</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="#match-score">Match Score</a>
         <a href="#perfis">Para quem</a>
@@ -42,7 +41,6 @@
     </div>
 
     <nav class="mobile-nav" id="mobile-menu" aria-label="Navegação móvel" aria-hidden="true">
-      <a href="#problema">O desafio</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#match-score">Match Score</a>
       <a href="#perfis">Para quem</a>
@@ -80,38 +78,38 @@
       </div>
     </div>
 
-    <section class="problem section" id="problema" aria-labelledby="problem-title">
+    <section class="profiles section" id="perfis" aria-labelledby="profiles-title">
       <div class="container">
-        <div class="section-heading split-heading reveal">
-          <div>
-            <span class="eyebrow"><span></span> O desafio</span>
-            <h2 id="problem-title">Talentos existem. As oportunidades <em>nem sempre chegam.</em></h2>
-          </div>
-          <p>Bolsas, avaliações, treinos e apoios ainda ficam espalhados entre redes sociais, indicações e contatos pessoais.</p>
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Feito para conectar</span>
+          <h2 id="profiles-title">Três perfis.<br><em>Um mesmo objetivo.</em></h2>
         </div>
-
-        <div class="problem-grid mobile-carousel" data-carousel-label="Desafios de cada perfil">
-          <article class="problem-card reveal">
-            <div class="card-number">01</div>
-            <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-person-running"></i></span>
-            <h3>Atletas</h3>
-            <p>Dificuldade para encontrar treinamentos, bolsas, avaliações e o apoio certo para seguir evoluindo.</p>
-            <div class="card-tag">Potencial sem vitrine</div>
+        <div class="profiles-grid mobile-carousel" data-carousel-label="Perfis conectados pelo MatchPoint">
+          <article class="profile-card profile-athlete reveal">
+            <div class="profile-top"><span>01</span><i>Atleta</i></div>
+            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-person-running"></i></span>
+            <h3>Para quem quer ir além.</h3>
+            <ul><li>Criar perfil esportivo</li><li>Encontrar oportunidades</li><li>Acompanhar candidaturas</li></ul>
+            <button type="button" class="profile-action js-open-dialog" data-role="Atleta" aria-label="Participar como atleta">↗</button>
           </article>
-          <article class="problem-card feature-card reveal">
-            <div class="card-number">02</div>
-            <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-chalkboard-user"></i></span>
-            <h3>Treinadores</h3>
-            <p>Dificuldade para encontrar atletas compatíveis e organizar avaliações técnicas com clareza.</p>
-            <div class="card-tag">Avaliação dispersa</div>
+          <article class="profile-card profile-coach reveal">
+            <div class="profile-top"><span>02</span><i>Treinador</i></div>
+            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-chalkboard-user"></i></span>
+            <h3>Para quem desenvolve talento.</h3>
+            <ul><li>Criar oportunidades</li><li>Avaliar atletas</li><li>Contribuir com o desenvolvimento</li></ul>
+            <button type="button" class="profile-action js-open-dialog" data-role="Treinador" aria-label="Participar como treinador">↗</button>
           </article>
-          <article class="problem-card reveal">
-            <div class="card-number">03</div>
-            <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></span>
-            <h3>Instituições</h3>
-            <p>Dificuldade para identificar talentos e criar processos de seleção seguros e estruturados.</p>
-            <div class="card-tag">Impacto sem dados</div>
+          <article class="profile-card profile-institution reveal">
+            <div class="profile-top"><span>03</span><i>Instituição</i></div>
+            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-building-columns"></i></span>
+            <h3>Para quem transforma potencial.</h3>
+            <ul><li>Oferecer apoio</li><li>Encontrar talentos</li><li>Acompanhar impacto</li></ul>
+            <button type="button" class="profile-action js-open-dialog" data-role="Instituição" aria-label="Participar como instituição">↗</button>
           </article>
+        </div>
+        <div class="minor-note reveal">
+          <span class="minor-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+          <div><strong>Proteção também faz parte do jogo.</strong><p>Perfis de atletas menores são administrados pelo responsável legal, do cadastro à candidatura.</p></div>
         </div>
       </div>
     </section>
@@ -205,42 +203,6 @@
       </div>
     </section>
 
-    <section class="profiles section" id="perfis" aria-labelledby="profiles-title">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow"><span></span> Feito para conectar</span>
-          <h2 id="profiles-title">Três perfis.<br><em>Um mesmo objetivo.</em></h2>
-        </div>
-        <div class="profiles-grid mobile-carousel" data-carousel-label="Perfis conectados pelo MatchPoint">
-          <article class="profile-card profile-athlete reveal">
-            <div class="profile-top"><span>01</span><i>Atleta</i></div>
-            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-person-running"></i></span>
-            <h3>Para quem quer ir além.</h3>
-            <ul><li>Criar perfil esportivo</li><li>Encontrar oportunidades</li><li>Acompanhar candidaturas</li></ul>
-            <button type="button" class="profile-action js-open-dialog" data-role="Atleta" aria-label="Participar como atleta">↗</button>
-          </article>
-          <article class="profile-card profile-coach reveal">
-            <div class="profile-top"><span>02</span><i>Treinador</i></div>
-            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-chalkboard-user"></i></span>
-            <h3>Para quem desenvolve talento.</h3>
-            <ul><li>Criar oportunidades</li><li>Avaliar atletas</li><li>Contribuir com o desenvolvimento</li></ul>
-            <button type="button" class="profile-action js-open-dialog" data-role="Treinador" aria-label="Participar como treinador">↗</button>
-          </article>
-          <article class="profile-card profile-institution reveal">
-            <div class="profile-top"><span>03</span><i>Instituição</i></div>
-            <span class="profile-visual" aria-hidden="true"><span class="court-orbit"></span><i class="fa-solid fa-building-columns"></i></span>
-            <h3>Para quem transforma potencial.</h3>
-            <ul><li>Oferecer apoio</li><li>Encontrar talentos</li><li>Acompanhar impacto</li></ul>
-            <button type="button" class="profile-action js-open-dialog" data-role="Instituição" aria-label="Participar como instituição">↗</button>
-          </article>
-        </div>
-        <div class="minor-note reveal">
-          <span class="minor-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
-          <div><strong>Proteção também faz parte do jogo.</strong><p>Perfis de atletas menores são administrados pelo responsável legal, do cadastro à candidatura.</p></div>
-        </div>
-      </div>
-    </section>
-
     <section class="women section" id="mulheres" aria-labelledby="women-title">
       <div class="container women-layout">
         <div class="women-copy reveal">
@@ -299,7 +261,7 @@
 
       <nav class="footer-links" aria-label="Navegação do rodapé">
         <span class="footer-label">Navegação</span>
-        <a href="#problema">O desafio</a><a href="#como-funciona">Como funciona</a><a href="#match-score">Match Score</a><a href="#perfis">Para quem é</a><a href="/hotsite/">Hotsite do TCC</a>
+        <a href="#como-funciona">Como funciona</a><a href="#match-score">Match Score</a><a href="#perfis">Para quem é</a><a href="/hotsite/">Hotsite do TCC</a>
       </nav>
 
       <div class="footer-contact">

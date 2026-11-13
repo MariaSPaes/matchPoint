@@ -686,8 +686,8 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
     font: inherit;
   }
   .carousel-button:disabled { opacity: .38; }
-  .journey .carousel-status, .profiles .carousel-status { color: rgba(255,255,255,.66); }
-  .journey .carousel-button, .profiles .carousel-button { border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.08); color: var(--white); }
+  .journey .carousel-status { color: rgba(255,255,255,.66); }
+  .journey .carousel-button { border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.08); color: var(--white); }
 
   .score-panel { margin-inline: auto; }
   .score-screen { overflow: hidden; }
