@@ -1051,3 +1051,24 @@ body.is-loading { overflow: hidden; }
   .hero-content { padding-top: 84px; padding-bottom: 36px; }
   .hero-copy > p { margin-block: 16px 20px; }
 }
+
+/* Calm, centered mobile hero: no decorative lines crossing people or content. */
+.hero::before, .hero-kinetic, .hero h1::after { display: none; }
+@media (max-width: 560px) {
+  .tennis-motion-layer { display: none; }
+  .hero { min-height: 680px; height: auto; }
+  .hero-content { min-height: 680px; padding: 92px 0 42px; align-items: center; justify-content: center; text-align: center; }
+  .hero-copy { width: min(100%, 430px); margin-inline: auto; }
+  .hero-copy .eyebrow { justify-content: center; }
+  .hero-copy > p { margin-inline: auto; }
+  .hero-actions { width: 100%; align-items: center; }
+  .hero-image { object-position: 62% center; }
+}
+@media (max-width: 380px) {
+  .hero, .hero-content { min-height: 640px; }
+  .hero-content { padding-top: 84px; padding-bottom: 34px; }
+}
+@media (max-height: 720px) and (max-width: 560px) {
+  .hero, .hero-content { min-height: 620px; }
+  .hero-content { padding-top: 80px; padding-bottom: 30px; }
+}
