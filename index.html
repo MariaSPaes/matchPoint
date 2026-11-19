@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css">
-  <link rel="stylesheet" href="style.css?v=27">
+  <link rel="stylesheet" href="style.css?v=28">
   <script src="script.js?v=6" defer></script>
 </head>
 <body>
@@ -31,10 +31,11 @@
         <a href="#match-score">Match Score</a>
         <a href="#perfis">Para quem</a>
         <a href="#impacto">Impacto</a>
+        <a href="#faq">Dúvidas</a>
         <a href="/hotsite/">TCC</a>
       </nav>
 
-      <button class="button button-small header-cta js-open-dialog" type="button">Faça parte</button>
+      <a class="button button-small header-cta" href="#lancamento">App gratuito</a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span>
       </button>
@@ -45,8 +46,9 @@
       <a href="#match-score">Match Score</a>
       <a href="#perfis">Para quem</a>
       <a href="#impacto">Impacto</a>
+      <a href="#faq">Dúvidas</a>
       <a href="/hotsite/">Hotsite do TCC</a>
-      <button class="button js-open-dialog" type="button">Faça parte</button>
+      <a class="button" href="#lancamento">Conhecer o lançamento</a>
     </nav>
   </header>
 
@@ -63,7 +65,7 @@
           <h1 id="hero-title">Conectando talentos às <em>oportunidades.</em></h1>
           <p>O MatchPoint aproxima atletas, treinadores e instituições para transformar potencial esportivo em oportunidades reais.</p>
           <div class="hero-actions">
-            <a class="button" href="#como-funciona">Conhecer o MatchPoint <span aria-hidden="true">↗</span></a>
+            <a class="button" href="#lancamento">Conhecer o app gratuito <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -228,6 +230,48 @@
       </div>
     </section>
 
+    <section class="app-showcase section" id="aplicativo" aria-labelledby="app-title">
+      <div class="container app-showcase-grid">
+        <div class="app-showcase-copy reveal">
+          <span class="eyebrow"><span></span> O MatchPoint em uso</span>
+          <h2 id="app-title">Sua jornada esportiva, <em>organizada em um só lugar.</em></h2>
+          <p>Encontre oportunidades compatíveis, acompanhe candidaturas e receba atualizações importantes sem depender de mensagens perdidas ou indicações informais.</p>
+          <ul class="benefit-list"><li><i class="fa-solid fa-bolt"></i><span><b>Descubra mais rápido</b> oportunidades alinhadas ao seu perfil.</span></li><li><i class="fa-solid fa-chart-line"></i><span><b>Acompanhe sua evolução</b> com informações claras sobre perfil e desempenho.</span></li><li><i class="fa-solid fa-bell"></i><span><b>Não perca nenhum passo</b> com notificações sobre oportunidades e candidaturas.</span></li></ul>
+        </div>
+        <div class="app-phone-stage reveal" aria-label="Telas do aplicativo MatchPoint">
+          <figure class="app-phone app-phone-back"><img src="assets/app/01-notificacoes.png" alt="Tela de notificações do MatchPoint" loading="lazy"></figure>
+          <figure class="app-phone app-phone-main"><img src="assets/app/03-painel-atleta.png" alt="Painel do atleta com desempenho, oportunidades e candidaturas" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section" aria-labelledby="testimonials-title">
+      <div class="container testimonial-heading reveal"><span class="eyebrow"><span></span> Histórias que queremos tornar possíveis</span><h2 id="testimonials-title">Quem vive o esporte <em>entende o valor da conexão.</em></h2><p>Depoimentos ilustrativos criados para representar situações e públicos atendidos pela proposta do MatchPoint.</p></div>
+      <div class="container testimonial-track mobile-carousel" data-carousel-label="Depoimentos ilustrativos sobre o MatchPoint">
+        <article class="testimonial-card reveal"><span>Depoimento ilustrativo</span><blockquote>“Em vez de procurar bolsas em vários grupos, eu teria tudo organizado e saberia quais oportunidades combinam comigo.”</blockquote><footer><b>Larissa, 17 anos</b><small>Atleta juvenil · personagem ilustrativa</small></footer></article>
+        <article class="testimonial-card reveal"><span>Depoimento ilustrativo</span><blockquote>“Uma plataforma assim ajudaria a comparar perfis e acompanhar cada atleta sem perder informações importantes.”</blockquote><footer><b>Rafael, treinador</b><small>Academia esportiva · personagem ilustrativo</small></footer></article>
+        <article class="testimonial-card reveal"><span>Depoimento ilustrativo</span><blockquote>“Quero saber onde o apoio está chegando e acompanhar o desenvolvimento de quem recebeu a oportunidade.”</blockquote><footer><b>Camila, gestora</b><small>Instituição apoiadora · personagem ilustrativa</small></footer></article>
+        <article class="testimonial-card reveal"><span>Depoimento ilustrativo</span><blockquote>“Como responsável, ter candidaturas, documentos e atualizações no mesmo lugar deixaria o processo muito mais seguro.”</blockquote><footer><b>André, responsável</b><small>Família de atleta · personagem ilustrativo</small></footer></article>
+      </div>
+    </section>
+
+    <section class="launch section" id="lancamento" aria-labelledby="launch-title">
+      <div class="container launch-card reveal">
+        <div><span class="eyebrow eyebrow-light"><span></span> Lançamento MatchPoint</span><h2 id="launch-title">Gratuito para quem <em>move o esporte.</em></h2><p>O MatchPoint foi concebido para oferecer acesso gratuito a atletas, treinadores e instituições. O aplicativo está em fase de preparação para lançamento.</p><div class="launch-badges"><span><i class="fa-solid fa-check"></i> Sem mensalidade</span><span><i class="fa-brands fa-android"></i> Android em breve</span><span><i class="fa-solid fa-shield-halved"></i> Perfis e jornadas organizadas</span></div></div>
+        <div class="launch-action"><span>APK em preparação</span><button class="button button-large js-open-dialog" type="button">Avise-me no lançamento <i class="fa-solid fa-arrow-right"></i></button><small>Nenhum download indisponível ou arquivo provisório será oferecido.</small></div>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout"><div class="faq-heading reveal"><span class="eyebrow"><span></span> Perguntas frequentes</span><h2 id="faq-title">Antes do primeiro <em>match.</em></h2><p>O essencial sobre acesso, perfis e lançamento.</p></div><div class="faq-list">
+        <details class="reveal"><summary>O MatchPoint será gratuito?</summary><p>Sim. A proposta de lançamento é oferecer acesso gratuito a atletas, treinadores e instituições.</p></details>
+        <details class="reveal"><summary>Quem pode criar um perfil?</summary><p>Atletas, treinadores e instituições poderão escolher jornadas próprias. Atletas menores de idade contam com vínculo de responsável.</p></details>
+        <details class="reveal"><summary>O aplicativo já pode ser baixado?</summary><p>Ainda não. A versão Android está em preparação e o link oficial será publicado aqui quando o APK final estiver disponível.</p></details>
+        <details class="reveal"><summary>Como funciona o Match Score?</summary><p>Ele apresenta a compatibilidade entre perfil e oportunidade com base em critérios visíveis, como objetivos, categoria, nível e disponibilidade.</p></details>
+        <details class="reveal"><summary>O MatchPoint garante uma oportunidade?</summary><p>Não. A plataforma organiza o encontro e o acompanhamento; a avaliação e a decisão final continuam sendo humanas.</p></details>
+      </div></div>
+    </section>
+
     <section class="final-cta" aria-labelledby="cta-title">
       <div class="final-court" aria-hidden="true"><span></span><span></span></div>
       <div class="tennis-ball" aria-hidden="true"><span></span></div>
@@ -235,7 +279,7 @@
         <span class="eyebrow eyebrow-light"><span></span> O próximo ponto começa aqui</span>
         <h2 id="cta-title"><span>O próximo talento espera por</span><em>uma oportunidade.</em></h2>
         <p>Entre em uma rede que aproxima quem tem potencial de quem pode abrir caminhos no esporte.</p>
-        <button class="button button-large final-button js-open-dialog" type="button"><span class="button-label">Conhecer o MatchPoint</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <button class="button button-large final-button js-open-dialog" type="button"><span class="button-label">Avise-me no lançamento</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         <div class="final-audience" aria-label="Feito para atletas, treinadores e instituições">
           <span><i class="fa-solid fa-person-running" aria-hidden="true"></i> Atletas</span>
           <i aria-hidden="true"></i>
@@ -266,7 +310,7 @@
 
       <div class="footer-contact">
         <span class="footer-label">Contato</span>
-        <a class="footer-email" href="mailto:contato@matchpoint.app">contato@matchpoint.app <span>↗</span></a>
+        <a class="footer-email" href="mailto:matchpoint@gmail.com.br">matchpoint@gmail.com.br <span>↗</span></a>
         <p>São Paulo, Brasil<br>Projeto acadêmico de Desenvolvimento de Sistemas.</p>
       </div>
 
