@@ -417,10 +417,25 @@ h1, h2, h3, p { margin-top: 0; }
 .viability-main p { color: rgba(255,255,255,.68); }
 .viability-main p, .viability-stat p, .viability-note p { font-size: .78rem; line-height: 1.65; }
 .viability-stat p, .viability-note p { color: var(--muted); }
-.viability-note { display: flex; grid-column: 2 / -1; align-items: flex-end; justify-content: space-between; gap: 30px; }
-.viability-note h3 { margin: 0 0 12px; }
-.viability-status { display: inline-flex !important; margin-bottom: 12px; padding: 6px 10px; border-radius: 999px; background: #e6f4d0; color: var(--green-deep) !important; letter-spacing: .04em !important; }
-.viability-note .text-link { display: inline-flex; flex: 0 0 auto; min-height: 48px; padding: 0 18px; align-items: center; gap: 9px; border-radius: 999px; background: var(--green-deep); color: var(--white); font-size: .7rem; font-weight: 700; }
+.viability-note { position: relative; display: grid; grid-column: 2 / -1; padding: 34px !important; gap: 28px; background: var(--ink) !important; color: var(--white); overflow: hidden; }
+.viability-note::before { position: absolute; width: 280px; height: 280px; top: -190px; right: -80px; border: 1px solid rgba(205,255,86,.18); border-radius: 50%; box-shadow: 0 0 0 45px rgba(205,255,86,.025), 0 0 0 90px rgba(205,255,86,.018); content: ""; animation: viabilityOrbit 7s ease-in-out infinite; }
+.viability-note-head { position: relative; z-index: 1; max-width: 690px; }
+.viability-note-head > span { display: inline-flex; margin-bottom: 12px; color: var(--lime) !important; }
+.viability-note h3 { max-width: 620px; margin: 0 0 10px; color: var(--white); font-size: clamp(1.15rem,2vw,1.55rem); line-height: 1.25; }
+.viability-note h3 em { color: var(--lime); font-family: var(--serif); font-size: 1.14em; font-style: normal; font-weight: 400; }
+.viability-note p { max-width: 680px; margin: 0; color: rgba(255,255,255,.62); }
+.viability-path { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; padding-top: 19px; border-top: 1px solid rgba(255,255,255,.14); }
+.viability-path::before { position: absolute; top: -2px; right: 0; left: 0; height: 3px; border-radius: 99px; background: linear-gradient(90deg,var(--lime),rgba(205,255,86,.15)); content: ""; transform: scaleX(.24); transform-origin: left; animation: viabilityLine 5.5s ease-in-out infinite; }
+.path-runner { position: absolute !important; z-index: 2; width: 13px; height: 13px; top: -7px; left: 0; border: 2px solid var(--ink); border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(205,255,86,.13); animation: viabilityRunner 5.5s ease-in-out infinite; }
+.viability-path > div { display: grid; gap: 3px; }
+.viability-path b { color: var(--lime); font-size: .56rem; letter-spacing: .08em; }
+.viability-path strong { margin: 0; color: var(--white); font-size: .76rem; letter-spacing: 0; }
+.viability-path small { color: rgba(255,255,255,.5); font-size: .62rem; line-height: 1.35; }
+.viability-note .text-link { position: relative; z-index: 1; display: inline-flex; width: max-content; min-height: 46px; padding: 0 18px; align-items: center; gap: 9px; border: 1px solid rgba(205,255,86,.55); border-radius: 999px; color: var(--white); font-size: .68rem; font-weight: 700; transition: background .25s ease, color .25s ease, transform .25s ease; }
+.viability-note .text-link:hover { background: var(--lime); color: var(--ink); transform: translateY(-2px); }
+@keyframes viabilityLine { 0%,100% { transform: scaleX(.08); opacity: .45; } 55% { transform: scaleX(1); opacity: 1; } }
+@keyframes viabilityRunner { 0%,100% { left: 0; } 55% { left: calc(100% - 13px); } }
+@keyframes viabilityOrbit { 50% { transform: translate(-16px,18px) scale(1.08); } }
 .advisors { position: relative; overflow: hidden; }
 .advisors-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(50px,9vw,140px); }
 .advisor-list { display: grid; gap: 12px; }
@@ -448,7 +463,8 @@ h1, h2, h3, p { margin-top: 0; }
   .viability-explainer { grid-template-columns: 1fr; }
   .viability-explainer > div + div { border-top: 1px solid var(--line); border-left: 0; }
   .viability-main, .viability-note { grid-column: auto; }
-  .viability-note { align-items: stretch; flex-direction: column; }
+  .viability-note { align-items: stretch; }
+  .viability-path { grid-template-columns: 1fr 1fr; gap: 20px 14px; }
   .document-actions { display: grid; }
   .pending-download { min-width: 0; }
 }
