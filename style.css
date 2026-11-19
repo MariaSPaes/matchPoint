@@ -847,3 +847,89 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
   .hero-image, .court-line, .profiles, .impact, .journey::after, .score-visual, .score-panel::before, .women-photo, .final-ball { animation: none !important; transform: none !important; }
   .motion-card, .motion-card.is-visible:hover { transform: none !important; transition: none !important; }
 }
+
+/* Ambient choreography: every chapter has its own quiet, readable motion. */
+.section > .container { position: relative; z-index: 1; }
+.section > .container::before {
+  position: absolute; z-index: -1; top: -42px; left: 0; width: 86px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lime), transparent); content: "";
+  opacity: .65; transform-origin: left; animation: sectionServe 5.4s ease-in-out infinite;
+}
+.profiles .profile-visual { animation: iconRally 4.8s ease-in-out infinite; }
+.profiles .profile-card:nth-child(2) .profile-visual { animation-delay: -.9s; }
+.profiles .profile-card:nth-child(3) .profile-visual { animation-delay: -1.8s; }
+.profile-visual::after, .step-symbol::after, .impact-card > i::after {
+  position: absolute; inset: -9px; border: 1px solid currentColor; border-radius: 50%; content: "";
+  opacity: 0; animation: radarRing 3.6s ease-out infinite; pointer-events: none;
+}
+.journey-step:nth-child(2) .step-symbol::after, .impact-card:nth-child(2) > i::after { animation-delay: -1.2s; }
+.journey-step:nth-child(3) .step-symbol::after, .impact-card:nth-child(3) > i::after { animation-delay: -2.4s; }
+.journey-step .step-number { display: inline-block; animation: numberBreath 3.8s ease-in-out infinite; }
+.journey-step:nth-child(2) .step-number { animation-delay: -.8s; }
+.journey-step:nth-child(3) .step-number { animation-delay: -1.6s; }
+.score-ring { animation: scoreRingBreath 4.2s ease-in-out infinite; }
+.score-meter > span { position: relative; overflow: hidden; }
+.score-meter > span::after {
+  position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.75), transparent);
+  content: ""; transform: translateX(-130%); animation: meterGlint 3.8s ease-in-out infinite;
+}
+.women-copy .eyebrow i, .impact-heading .eyebrow i { animation: linePulse 2.8s ease-in-out infinite; }
+.impact-card > i { position: relative; animation: iconRally 4.6s ease-in-out infinite; }
+.impact-card:nth-child(2) > i { animation-delay: -1.1s; }
+.impact-card:nth-child(3) > i { animation-delay: -2.2s; }
+.app-phone-stage::after {
+  position: absolute; z-index: -1; inset: 14% 8%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(205,255,86,.3), rgba(31,122,73,.08) 45%, transparent 70%);
+  filter: blur(20px); content: ""; animation: stageGlow 6s ease-in-out infinite;
+}
+.feature-list li i { animation: featurePop 3.8s ease-in-out infinite; }
+.feature-list li:nth-child(2) i { animation-delay: -1.2s; }
+.feature-list li:nth-child(3) i { animation-delay: -2.4s; }
+.testimonial-avatar { position: relative; animation: avatarFloat 4.5s ease-in-out infinite; }
+.testimonial-card:nth-child(2) .testimonial-avatar { animation-delay: -1.1s; }
+.testimonial-card:nth-child(3) .testimonial-avatar { animation-delay: -2.2s; }
+.testimonial-card:nth-child(4) .testimonial-avatar { animation-delay: -3.3s; }
+.launch-card { position: relative; overflow: hidden; }
+.launch-card::before {
+  position: absolute; inset: -60% auto -60% -30%; width: 28%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  content: ""; transform: rotate(18deg); animation: launchShine 6s ease-in-out infinite; pointer-events: none;
+}
+.launch-action .button { animation: ctaBreath 3s ease-in-out infinite; }
+.faq-list details::before {
+  position: absolute; left: 0; bottom: -1px; width: 18%; height: 1px; background: var(--lime); content: "";
+  animation: faqLine 5s ease-in-out infinite; opacity: .75;
+}
+.faq-list details { position: relative; }
+.faq-list details:nth-child(2)::before { animation-delay: -1s; }
+.faq-list details:nth-child(3)::before { animation-delay: -2s; }
+.faq-list details:nth-child(4)::before { animation-delay: -3s; }
+.faq-list details:nth-child(5)::before { animation-delay: -4s; }
+.faq-list summary::after { transition: transform .3s ease; }
+.faq-list details[open] summary::after { transform: rotate(180deg); }
+
+@keyframes sectionServe { 0%,100% { opacity: .25; transform: scaleX(.28) translateX(0); } 50% { opacity: .9; transform: scaleX(1.8) translateX(34px); } }
+@keyframes iconRally { 0%,100% { transform: translateZ(24px) translateY(0) rotate(0); } 50% { transform: translateZ(24px) translateY(-7px) rotate(2deg); } }
+@keyframes radarRing { 0% { opacity: .55; transform: scale(.72); } 75%,100% { opacity: 0; transform: scale(1.18); } }
+@keyframes numberBreath { 50% { color: var(--lime); transform: translateX(4px); } }
+@keyframes scoreRingBreath { 50% { filter: drop-shadow(0 0 15px rgba(205,255,86,.42)); transform: scale(1.025); } }
+@keyframes meterGlint { 0%,45% { transform: translateX(-130%); } 75%,100% { transform: translateX(130%); } }
+@keyframes linePulse { 50% { opacity: .45; transform: scaleX(.55); } }
+@keyframes stageGlow { 0%,100% { opacity: .55; transform: scale(.92) translate(-3%,2%); } 50% { opacity: 1; transform: scale(1.08) translate(4%,-3%); } }
+@keyframes featurePop { 50% { box-shadow: 0 0 0 8px rgba(205,255,86,.12); transform: translateY(-3px) rotate(-4deg); } }
+@keyframes avatarFloat { 50% { box-shadow: 0 12px 24px rgba(7,30,50,.18); transform: translateY(-6px) rotate(2deg); } }
+@keyframes launchShine { 0%,25% { left: -30%; } 65%,100% { left: 112%; } }
+@keyframes ctaBreath { 50% { box-shadow: 0 12px 30px rgba(205,255,86,.28); transform: translateY(-3px); } }
+@keyframes faqLine { 0%,100% { transform: scaleX(.18); transform-origin: left; } 50% { transform: scaleX(3.6); transform-origin: left; } }
+
+@media (max-width: 640px) {
+  .section > .container::before { top: -30px; width: 58px; }
+  .launch-action .button { animation-duration: 3.8s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section > .container::before, .profile-visual, .profile-visual::after, .step-symbol::after, .impact-card > i,
+  .impact-card > i::after, .journey-step .step-number, .score-ring, .score-meter > span::after,
+  .women-copy .eyebrow i, .impact-heading .eyebrow i, .app-phone-stage::after, .feature-list li i,
+  .testimonial-avatar, .launch-card::before, .launch-action .button, .faq-list details::before { animation: none !important; }
+}

@@ -631,3 +631,77 @@ h1, h2, h3, p { margin-top: 0; }
   .hero-background, .overview, .project, .process, .team-section::after, .solution::after, .team-photo, .team-photo::before, .team-photo img, .core-flow ol::before, .thanks-image, .document-layout::after { animation: none !important; transform: none !important; }
   .motion-card, .motion-card.shown:hover { transform: none !important; transition: none !important; }
 }
+
+/* Chapter choreography: motion illustrates research, construction and validation. */
+.section > .container { position: relative; z-index: 1; }
+.section > .container::before {
+  position: absolute; z-index: -1; top: -40px; left: 0; width: 80px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lime), transparent); content: "";
+  opacity: .7; animation: hSectionServe 5.6s ease-in-out infinite;
+}
+.overview-card > span, .member-head > span, .role-card > i, .process-list li > i {
+  animation: hIconRally 4.8s ease-in-out infinite;
+}
+.overview-card:nth-child(2) > span, .member-card:nth-child(2) .member-head > span, .role-card:nth-child(2) > i, .process-list li:nth-child(2) > i { animation-delay: -1s; }
+.overview-card:nth-child(3) > span, .member-card:nth-child(3) .member-head > span, .role-card:nth-child(3) > i, .process-list li:nth-child(3) > i { animation-delay: -2s; }
+.process-list li:nth-child(4) > i { animation-delay: -3s; }
+.overview-card::after, .member-card::after, .role-card::after { animation: hCardGlow 7s ease-in-out infinite; }
+.overview-card:nth-child(2)::after, .member-card:nth-child(2)::after, .role-card:nth-child(2)::after { animation-delay: -1.7s; }
+.overview-card:nth-child(3)::after, .member-card:nth-child(3)::after, .role-card:nth-child(3)::after { animation-delay: -3.4s; }
+.project-focus article > span { display: inline-block; animation: hNumberTick 3.8s ease-in-out infinite; }
+.project-focus article:nth-child(2) > span { animation-delay: -1.2s; }
+.project-focus article:nth-child(3) > span { animation-delay: -2.4s; }
+.core-flow li::before {
+  box-shadow: 0 0 0 0 rgba(205,255,86,.35); animation: hNodePulse 3.2s ease-out infinite;
+}
+.core-flow li:nth-child(2)::before { animation-delay: -1.05s; }
+.core-flow li:nth-child(3)::before { animation-delay: -2.1s; }
+.process-list li > span { display: inline-block; animation: hProcessCount 4s ease-in-out infinite; }
+.process-list li:nth-child(2) > span { animation-delay: -1s; }
+.process-list li:nth-child(3) > span { animation-delay: -2s; }
+.process-list li:nth-child(4) > span { animation-delay: -3s; }
+.screen-card img { animation: hScreenFloat 5.8s ease-in-out infinite; }
+.screen-card:nth-child(2) img { animation-delay: -.8s; }
+.screen-card:nth-child(3) img { animation-delay: -1.6s; }
+.screen-card:nth-child(4) img { animation-delay: -2.4s; }
+.screen-card:nth-child(5) img { animation-delay: -3.2s; }
+.screen-card:nth-child(6) img { animation-delay: -4s; }
+.screen-card:nth-child(7) img { animation-delay: -4.8s; }
+.screen-card:nth-child(8) img { animation-delay: -5.6s; }
+.viability-stat strong { display: inline-block; animation: hStatPulse 4s ease-in-out infinite; }
+.viability-stat:nth-child(2) strong { animation-delay: -1s; }
+.viability-stat:nth-child(3) strong { animation-delay: -2s; }
+.viability-stat:nth-child(4) strong { animation-delay: -3s; }
+.advisor-list article > span { animation: hAdvisorOrbit 4.8s ease-in-out infinite; }
+.advisor-list article:nth-child(2) > span { animation-delay: -2.4s; }
+.document-button { position: relative; overflow: hidden; animation: hCtaBreath 3.2s ease-in-out infinite; }
+.document-button::after {
+  position: absolute; inset: -80% auto -80% -35%; width: 24%; background: linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  content: ""; transform: rotate(18deg); animation: hButtonShine 5.5s ease-in-out infinite;
+}
+.school-signature { animation: hSignatureFloat 5s ease-in-out infinite; }
+
+@keyframes hSectionServe { 0%,100% { opacity: .25; transform: scaleX(.3) translateX(0); } 50% { opacity: 1; transform: scaleX(1.8) translateX(36px); } }
+@keyframes hIconRally { 0%,100% { transform: translateZ(22px) translateY(0) rotate(0); } 50% { transform: translateZ(22px) translateY(-7px) rotate(3deg); } }
+@keyframes hCardGlow { 0%,100% { opacity: .18; background-position: 15% 20%; } 50% { opacity: .68; background-position: 85% 80%; } }
+@keyframes hNumberTick { 50% { color: var(--lime); transform: translateX(5px); } }
+@keyframes hNodePulse { 0% { box-shadow: 0 0 0 0 rgba(205,255,86,.5); } 75%,100% { box-shadow: 0 0 0 12px rgba(205,255,86,0); } }
+@keyframes hProcessCount { 50% { color: var(--green); transform: translateX(5px); } }
+@keyframes hScreenFloat { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.012); } }
+@keyframes hStatPulse { 50% { filter: drop-shadow(0 0 12px rgba(205,255,86,.3)); transform: translateY(-4px); } }
+@keyframes hAdvisorOrbit { 50% { border-color: var(--lime); box-shadow: 0 0 0 8px rgba(205,255,86,.08); transform: rotate(4deg); } }
+@keyframes hCtaBreath { 50% { box-shadow: 0 13px 30px rgba(205,255,86,.22); transform: translateY(-3px); } }
+@keyframes hButtonShine { 0%,25% { left: -35%; } 65%,100% { left: 115%; } }
+@keyframes hSignatureFloat { 50% { transform: translateY(-5px); } }
+
+@media (max-width: 640px) {
+  .section > .container::before { top: -28px; width: 56px; }
+  .screen-card img { animation-duration: 6.8s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section > .container::before, .overview-card > span, .member-head > span, .role-card > i, .process-list li > i,
+  .overview-card::after, .member-card::after, .role-card::after, .project-focus article > span,
+  .core-flow li::before, .process-list li > span, .screen-card img, .viability-stat strong,
+  .advisor-list article > span, .document-button, .document-button::after, .school-signature { animation: none !important; }
+}
