@@ -3,6 +3,16 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
 const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
 const revealElements = document.querySelectorAll('.reveal');
+const loaderStartedAt = performance.now();
+
+window.addEventListener('load', () => {
+  const remaining = Math.max(0, 1250 - (performance.now() - loaderStartedAt));
+  window.setTimeout(() => {
+    document.body.classList.remove('is-loading');
+    document.body.classList.add('is-loaded');
+    window.setTimeout(() => document.querySelector('.site-loader')?.remove(), 850);
+  }, remaining);
+});
 const joinDialog = document.querySelector('#join-dialog');
 const interestForm = document.querySelector('#interest-form');
 const formStep = document.querySelector('.dialog-form-step');
@@ -171,12 +181,13 @@ scoreObserver.observe(scorePanel);
 const trackedSections = document.querySelectorAll('main section[id]');
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
+    entry.target.classList.toggle('section-in-view', entry.isIntersecting);
     if (!entry.isIntersecting) return;
     document.querySelectorAll('.desktop-nav a').forEach((link) => {
       link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
     });
   });
-}, { rootMargin: '-35% 0px -55%', threshold: 0 });
+}, { rootMargin: '-18% 0px -22%', threshold: 0.08 });
 
 trackedSections.forEach((section) => sectionObserver.observe(section));
 

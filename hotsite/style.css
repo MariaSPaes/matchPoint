@@ -705,3 +705,31 @@ h1, h2, h3, p { margin-top: 0; }
   .core-flow li::before, .process-list li > span, .screen-card img, .viability-stat strong,
   .advisor-list article > span, .document-button, .document-button::after, .school-signature { animation: none !important; }
 }
+
+/* Cinematic loading and scroll chapters. */
+body.is-loading { overflow: hidden; }
+.site-loader { position: fixed; z-index: 9999; inset: 0; display: grid; place-content: center; justify-items: center; background: radial-gradient(circle at 50% 44%, #123d55 0, #071c30 42%, #031323 100%); color: var(--white); opacity: 1; visibility: visible; transition: opacity .7s ease, visibility .7s ease; }
+.is-loaded .site-loader { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-court { position: relative; width: 180px; height: 96px; margin-bottom: 24px; overflow: hidden; border: 1px solid rgba(205,255,86,.4); border-radius: 50%; transform: perspective(280px) rotateX(58deg); }
+.loader-court::before, .loader-court::after { position: absolute; content: ""; background: rgba(205,255,86,.32); }
+.loader-court::before { top: 50%; right: 0; left: 0; height: 1px; }
+.loader-court::after { top: 0; bottom: 0; left: 50%; width: 1px; }
+.loader-court i { position: absolute; inset: 16px 36px; border: 1px solid rgba(255,255,255,.2); }
+.loader-ball { position: absolute; z-index: 2; top: 15%; left: 12%; width: 22px; aspect-ratio: 1; border-radius: 50%; background: var(--lime); box-shadow: 0 0 22px rgba(205,255,86,.75); animation: loaderRally 1.15s cubic-bezier(.45,.05,.55,.95) infinite; }
+.site-loader > strong { font-family: var(--display); font-size: clamp(2rem,5vw,3.5rem); letter-spacing: -.05em; }
+.site-loader > strong span { color: var(--lime); font-family: var(--serif); font-style: italic; font-weight: 400; }
+.site-loader > p { margin: 8px 0 22px; color: rgba(255,255,255,.64); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; }
+.loader-progress { width: min(250px,65vw); height: 2px; overflow: hidden; background: rgba(255,255,255,.12); }
+.loader-progress i { display: block; width: 45%; height: 100%; background: var(--lime); animation: loaderProgress 1.15s ease-in-out infinite; }
+.section-in-view > .container::after { position: absolute; z-index: -1; top: -12%; left: -12%; width: 48%; height: 124%; background: linear-gradient(105deg,transparent 12%,rgba(205,255,86,.055) 48%,transparent 78%); content: ""; transform: skewX(-12deg) translateX(-120%); animation: chapterLight 1.4s cubic-bezier(.22,1,.36,1) both; pointer-events: none; }
+.section-in-view .section-heading h2, .section-in-view .team-heading h2, .section-in-view .project-summary h2,
+.section-in-view .solution-intro h2, .section-in-view .document-copy h2, .section-in-view .advisors-layout h2 { animation: chapterTitle 1s cubic-bezier(.16,1,.3,1) both; }
+.section-in-view .section-heading > p, .section-in-view .team-intro > p, .section-in-view .project-summary p,
+.section-in-view .solution-intro p, .section-in-view .document-copy > p { animation: chapterCopy 1.05s .15s cubic-bezier(.22,1,.36,1) both; }
+@keyframes loaderRally { 0%,100% { left: 10%; top: 18%; transform: scale(.8); } 25% { left: 70%; top: 66%; transform: scale(1.15); } 50% { left: 82%; top: 17%; transform: scale(.9); } 75% { left: 22%; top: 65%; transform: scale(1.1); } }
+@keyframes loaderProgress { 0% { transform: translateX(-110%); } 100% { transform: translateX(330%); } }
+@keyframes chapterLight { to { transform: skewX(-12deg) translateX(300%); } }
+@keyframes chapterTitle { from { opacity: 0; filter: blur(12px); transform: translateY(55px) skewY(2deg); } to { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes chapterCopy { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@media (max-width: 640px) { .loader-court { width: 145px; height: 78px; } .section-in-view > .container::after { opacity: .6; } }
+@media (prefers-reduced-motion: reduce) { .site-loader { display: none; } body.is-loading { overflow: auto; } .section-in-view > .container::after, .section-in-view h2, .section-in-view p { animation: none !important; } }

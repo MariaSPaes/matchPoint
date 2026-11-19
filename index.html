@@ -14,10 +14,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/solid.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css">
-  <link rel="stylesheet" href="style.css?v=31">
-  <script src="script.js?v=6" defer></script>
+  <link rel="stylesheet" href="style.css?v=32">
+  <script src="script.js?v=7" defer></script>
 </head>
-<body>
+<body class="is-loading">
+  <div class="site-loader" aria-label="Carregando MatchPoint" role="status">
+    <div class="loader-court" aria-hidden="true"><span class="loader-ball"></span><i></i></div>
+    <strong>Match<span>Point</span></strong>
+    <p>Preparando o próximo ponto</p>
+    <div class="loader-progress" aria-hidden="true"><i></i></div>
+  </div>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
   <header class="site-header" id="topo">
