@@ -760,3 +760,28 @@ body.is-loading { overflow: hidden; }
   .screen-gallery > .screen-card { flex-basis: min(78vw,300px); }
   .screen-gallery + .carousel-controls { width: calc(100% - (var(--mobile-gutter) * 2)); }
 }
+
+/* Mobile UX polish: the story begins immediately after the compact header. */
+@media (max-width: 560px) {
+  .header-inner { min-height: 68px; }
+  .site-logo img { width: 76px; height: 52px; }
+  .menu-button { width: 42px; height: 42px; }
+  .tcc-hero { min-height: max(760px, 100svh); }
+  .hero-content { min-height: max(760px, 100svh); align-items: flex-start; padding-top: 112px; padding-bottom: 48px; }
+  .hero-background { object-position: 62% center; }
+  .hero-copy h1 { font-size: clamp(3.15rem, 14vw, 4.2rem); line-height: .9; }
+  .hero-copy > p { margin: 22px 0 26px; line-height: 1.55; }
+  .hero-actions { gap: 12px; }
+  .chapter-inner { min-height: 60px; }
+}
+@media (max-width: 380px) {
+  .header-inner { min-height: 64px; }
+  .tcc-hero, .hero-content { min-height: max(730px, 100svh); }
+  .hero-content { padding-top: 102px; padding-bottom: 40px; }
+  .hero-copy h1 { font-size: clamp(2.85rem, 14.5vw, 3.45rem); }
+}
+@media (max-height: 720px) and (max-width: 560px) {
+  .tcc-hero, .hero-content { min-height: 700px; }
+  .hero-content { padding-top: 92px; padding-bottom: 34px; }
+  .hero-copy > p { margin-block: 17px 20px; }
+}

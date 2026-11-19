@@ -1024,3 +1024,30 @@ body.is-loading { overflow: hidden; }
   .hero-actions .button, .hero-actions .button::before, .hero-live-note i { animation: none !important; }
   .hero-kinetic, .hero-content { transform: none !important; transition: none !important; }
 }
+
+/* Mobile UX polish: content starts in the first fold without sacrificing the athletes. */
+@media (max-width: 560px) {
+  .site-header { padding-block: 4px; }
+  .nav-shell { min-height: 64px; }
+  .brand-logo { width: 78px; height: 54px; }
+  .menu-toggle { width: 42px; height: 42px; }
+  .hero { min-height: max(760px, 100svh); }
+  .hero-content { min-height: max(760px, 100svh); padding-top: 94px; padding-bottom: 54px; }
+  .hero-copy { padding-top: 0; }
+  .hero-image { object-position: 61% center; }
+  .hero h1 { font-size: clamp(2.8rem, 12.5vw, 3.75rem); line-height: .94; }
+  .hero-copy > p { margin: 20px 0 25px; line-height: 1.58; }
+  .hero-actions { gap: 10px; }
+  .signal-strip { padding-block: 14px; }
+}
+@media (max-width: 380px) {
+  .hero { min-height: max(730px, 100svh); }
+  .hero-content { min-height: max(730px, 100svh); padding-top: 88px; padding-bottom: 44px; }
+  .hero h1 { font-size: clamp(2.55rem, 12.8vw, 3rem); }
+  .hero-copy > p { margin-block: 18px 22px; }
+}
+@media (max-height: 720px) and (max-width: 560px) {
+  .hero, .hero-content { min-height: 700px; }
+  .hero-content { padding-top: 84px; padding-bottom: 36px; }
+  .hero-copy > p { margin-block: 16px 20px; }
+}
