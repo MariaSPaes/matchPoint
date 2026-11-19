@@ -1072,3 +1072,39 @@ body.is-loading { overflow: hidden; }
   .hero, .hero-content { min-height: 620px; }
   .hero-content { padding-top: 80px; padding-bottom: 30px; }
 }
+
+/* Complete mobile alignment pass. */
+@media (max-width: 640px) {
+  .section > .container::before { display: none; }
+  .section, .section-heading, .split-heading, .journey-top, .journey-copy, .score-copy,
+  .impact-heading, .app-showcase-copy, .testimonial-heading, .faq-heading,
+  .problem-card, .journey-step, .profile-card, .impact-card, .testimonial-card,
+  .launch-copy, .launch-action, .final-content { text-align: center; }
+  .section-heading, .split-heading, .journey-top, .score-layout, .impact-heading,
+  .app-showcase-grid, .testimonial-heading, .faq-layout { justify-items: center; }
+  .eyebrow, .eyebrow-light, .section-heading .eyebrow, .journey-copy .eyebrow,
+  .impact-heading .eyebrow, .app-showcase-copy .eyebrow, .testimonial-heading .eyebrow,
+  .faq-heading .eyebrow, .women-copy .eyebrow { justify-content: center; }
+  .section-heading p, .split-heading > p, .journey-copy > p, .impact-heading > p,
+  .app-showcase-copy > p, .testimonial-heading > p, .faq-heading > p { margin-inline: auto; }
+  .problem-card, .journey-step, .profile-card, .impact-card, .testimonial-card { align-items: center; }
+  .card-icon, .step-symbol, .profile-visual, .impact-card > i { margin-inline: auto; }
+  .profile-card ul, .profile-card li { width: 100%; text-align: center; }
+  .profile-card li::before { position: static; display: inline-block; margin-right: 8px; }
+  .feature-list { width: 100%; }
+  .feature-list li { grid-template-columns: 1fr; justify-items: center; gap: 10px; text-align: center; }
+  .feature-list li i { margin-inline: auto; }
+  .app-phone-stage { width: min(100%, 390px); margin-inline: auto; }
+  .women { min-height: 620px; padding-block: 0; background-position: 42% center; }
+  .women-layout { min-height: 620px; align-items: center; justify-content: center; }
+  .women-copy { width: min(100%, 430px); margin-inline: auto; text-align: center; }
+  .women-copy p { margin-inline: auto; }
+  .launch-action { justify-items: center; }
+  .faq-list { width: 100%; text-align: left; }
+  .footer-main, .footer-column, .footer-bottom { text-align: center; }
+  .footer-brand p, .footer-cta-card { margin-inline: auto; }
+  .footer-bottom { align-items: center; }
+}
+@media (max-width: 380px) {
+  .women, .women-layout { min-height: 580px; }
+}

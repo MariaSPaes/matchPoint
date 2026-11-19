@@ -806,3 +806,33 @@ body.is-loading { overflow: hidden; }
   .tcc-hero, .hero-content { min-height: 630px; }
   .hero-content { padding-top: 80px; padding-bottom: 30px; }
 }
+
+/* Complete mobile alignment pass. */
+@media (max-width: 640px) {
+  .section > .container::before { display: none; }
+  .section, .section-heading, .team-heading, .team-intro, .team-functions-intro,
+  .project-summary, .project-focus, .solution-intro, .core-flow, .process-list,
+  .viability-explainer, .viability-grid, .advisors-layout, .advisor-list,
+  .document-copy, .closing-content, .thanks-panel, .overview-card, .member-card,
+  .team-function-card, .role-card, .screen-card { text-align: center; }
+  .section-heading, .team-heading, .team-intro, .team-functions-intro,
+  .project-summary, .solution-intro, .advisors-layout, .document-layout { justify-items: center; }
+  .eyebrow, .section-heading .eyebrow, .team-heading .eyebrow, .document-copy .eyebrow,
+  .advisors-layout .eyebrow { justify-content: center; }
+  .section-heading p, .team-intro p, .project-summary p, .solution-intro p,
+  .document-copy > p, .thanks-panel p { margin-inline: auto; }
+  .overview-card, .member-card, .team-function-card, .role-card { align-items: center; }
+  .member-head { width: 100%; justify-content: center; text-align: center; }
+  .member-card ul { width: 100%; padding-left: 0; list-style-position: inside; }
+  .team-function-card i, .role-card > i, .process-list li > i { margin-inline: auto; }
+  .project-focus article, .viability-explainer > div, .viability-main,
+  .viability-stat, .viability-note { text-align: center; }
+  .core-flow li { justify-items: center; text-align: center; }
+  .process-list li, .process-list li:nth-child(4) { justify-items: center; text-align: center; }
+  .screen-card figcaption { justify-items: center; text-align: center; }
+  .advisor-list article { justify-content: center; text-align: center; }
+  .school-signature, .document-actions { justify-content: center; text-align: center; }
+  .footer-main, .footer-column, .footer-bottom { text-align: center; }
+  .footer-brand p { margin-inline: auto; }
+  .footer-bottom { align-items: center; }
+}
