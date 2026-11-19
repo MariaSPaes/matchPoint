@@ -631,7 +631,7 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .app-phone { position: absolute; margin: 0; filter: drop-shadow(0 34px 42px rgba(4,27,35,.23)); }
 .app-phone img { display: block; width: 100%; height: auto; }
 .app-phone-main { z-index: 2; width: min(48vw,480px); right: 5%; top: 0; animation: phoneFloat 6s ease-in-out infinite; }
-.app-phone-back { z-index: 1; width: min(38vw,380px); left: 0; top: 85px; opacity: .8; transform: rotate(-7deg); animation: phoneFloatBack 7s ease-in-out infinite; }
+.app-phone-back { z-index: 1; width: min(38vw,380px); left: 0; top: 85px; opacity: 1; filter: none; transform: none; animation: phoneFloatBack 7s ease-in-out infinite; }
 .testimonials { background: var(--cream); }
 .testimonial-heading { display: grid; grid-template-columns: 1fr .55fr; align-items: end; gap: 40px; }
 .testimonial-heading .eyebrow, .testimonial-heading h2 { grid-column: 1; }
@@ -672,7 +672,7 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .faq-list details[open] summary::after { content: "−"; }
 .faq-list details p { max-width: 700px; margin: -7px 0 28px; color: var(--muted); font-size: .88rem; }
 @keyframes phoneFloat { 50% { transform: translateY(-13px) rotate(.5deg); } }
-@keyframes phoneFloatBack { 50% { transform: translateY(11px) rotate(-5deg); } }
+@keyframes phoneFloatBack { 50% { transform: translateY(11px); } }
 
 @media (max-width: 900px) {
   .app-showcase-grid, .launch-card, .faq-layout { grid-template-columns: 1fr; }
