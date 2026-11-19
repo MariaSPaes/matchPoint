@@ -442,6 +442,8 @@ h1, h2, h3, p { margin-top: 0; }
   .screen-gallery { display: flex; }
   .screen-card { flex-basis: min(78vw,300px); min-height: 500px; }
   .screen-card img { height: 410px; }
+  .viability .section-heading h2 { font-size: clamp(2rem, 10vw, 2.45rem); line-height: 1.02; }
+  .viability .section-heading h2 em { margin-top: 5px; font-size: .88em; line-height: 1; }
   .viability-grid { grid-template-columns: 1fr; }
   .viability-explainer { grid-template-columns: 1fr; }
   .viability-explainer > div + div { border-top: 1px solid var(--line); border-left: 0; }
