@@ -93,10 +93,13 @@ h1, h2 {
 
 h1 em, h2 em {
   display: inline-block;
-  color: var(--lime);
+  color: var(--green-dark);
   font-family: var(--display);
   font-weight: 600;
 }
+
+.hero h1 em, .dark-section h2 em, .launch h2 em, .final-cta h2 em { color: var(--lime); }
+.score h2 em { color: var(--lime); }
 
 h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 
@@ -634,11 +637,19 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .testimonial-heading .eyebrow, .testimonial-heading h2 { grid-column: 1; }
 .testimonial-heading p { grid-column: 2; grid-row: 1 / span 2; color: var(--muted); }
 .testimonial-track { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 64px; }
-.testimonial-card { min-height: 330px; padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.68); }
-.testimonial-card > span { color: var(--green); font-size: .61rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
-.testimonial-card blockquote { margin: 55px 0 40px; color: var(--ink); font-size: 1rem; font-weight: 600; line-height: 1.6; }
-.testimonial-card footer { display: grid; gap: 3px; }
-.testimonial-card small { color: var(--muted); font-size: .68rem; }
+.testimonial-card { display: flex; min-height: 360px; padding: 26px; flex-direction: column; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.76); box-shadow: 0 14px 40px rgba(11,31,52,.05); }
+.testimonial-person { display: flex; align-items: center; gap: 13px; }
+.testimonial-person > div { display: grid; gap: 2px; }
+.testimonial-person b { color: var(--ink); font-size: .78rem; }
+.testimonial-card small { color: var(--muted); font-size: .62rem; line-height: 1.35; }
+.testimonial-avatar { flex: 0 0 auto; width: 58px; height: 58px; border: 3px solid var(--white); border-radius: 50%; background-image: url("assets/testimonial-avatars.png"); background-repeat: no-repeat; background-size: 200% 200%; box-shadow: 0 0 0 1px var(--line), 0 8px 20px rgba(11,31,52,.13); }
+.avatar-athlete { background-position: 0 0; }
+.avatar-coach { background-position: 100% 0; }
+.avatar-manager { background-position: 0 100%; }
+.avatar-guardian { background-position: 100% 100%; }
+.testimonial-card blockquote { margin: 30px 0 28px; color: var(--ink); font-size: .94rem; font-weight: 600; line-height: 1.6; }
+.testimonial-result { display: flex; margin-top: auto; align-items: center; gap: 8px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--green-dark); font-size: .61rem; font-weight: 700; line-height: 1.4; text-transform: uppercase; }
+.testimonial-result i { display: grid; width: 27px; height: 27px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); }
 .launch { background: var(--cream); }
 .launch-card { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 60px; padding: clamp(36px,5vw,76px); border-radius: 32px; background: var(--green-dark); color: var(--white); box-shadow: var(--shadow); }
 .launch-card h2 { max-width: 780px; margin-top: 20px; }
@@ -653,6 +664,7 @@ h2 { font-size: clamp(2.9rem, 5vw, 5rem); }
 .faq-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(50px,8vw,130px); }
 .faq-heading { position: sticky; top: 140px; align-self: start; }
 .faq-heading p { color: var(--muted); }
+.faq-heading h2 em { color: var(--green-dark); }
 .faq-list { border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
 .faq-list summary { position: relative; padding: 28px 45px 28px 0; cursor: pointer; color: var(--ink); font-size: 1.05rem; font-weight: 600; list-style: none; }
