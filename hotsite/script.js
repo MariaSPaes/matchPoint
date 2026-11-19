@@ -22,8 +22,11 @@ const setupMobileCarousels = () => {
     const status = controls.querySelector('.carousel-status');
     const previous = controls.querySelector('.carousel-prev');
     const next = controls.querySelector('.carousel-next');
+    const infinite = track.dataset.carouselInfinite === 'true';
+    const autoplay = track.dataset.carouselAutoplay === 'true';
     let activeIndex = 0;
     let scrollFrame;
+    let autoplayTimer;
 
     const update = () => {
       const currentLeft = track.scrollLeft;
@@ -31,13 +34,21 @@ const setupMobileCarousels = () => {
         Math.abs(item.offsetLeft - currentLeft) < Math.abs(items[closest].offsetLeft - currentLeft) ? index : closest
       ), 0);
       status.textContent = `${activeIndex + 1} / ${items.length}`;
-      previous.disabled = activeIndex === 0;
-      next.disabled = activeIndex === items.length - 1;
+      previous.disabled = !infinite && activeIndex === 0;
+      next.disabled = !infinite && activeIndex === items.length - 1;
     };
 
     const goTo = (index) => {
-      const target = items[Math.max(0, Math.min(items.length - 1, index))];
+      const safeIndex = infinite ? (index + items.length) % items.length : Math.max(0, Math.min(items.length - 1, index));
+      const target = items[safeIndex];
       track.scrollTo({ left: target.offsetLeft - parseFloat(getComputedStyle(track).paddingLeft), behavior: 'smooth' });
+    };
+
+    const stopAutoplay = () => window.clearInterval(autoplayTimer);
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (!autoplay || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      autoplayTimer = window.setInterval(() => goTo(activeIndex + 1), 3600);
     };
 
     previous.addEventListener('click', () => goTo(activeIndex - 1));
@@ -50,7 +61,13 @@ const setupMobileCarousels = () => {
       window.cancelAnimationFrame(scrollFrame);
       scrollFrame = window.requestAnimationFrame(update);
     }, { passive: true });
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+    track.addEventListener('focusin', stopAutoplay);
+    track.addEventListener('focusout', startAutoplay);
+    track.addEventListener('pointerdown', stopAutoplay, { passive: true });
     update();
+    startAutoplay();
   });
 };
 

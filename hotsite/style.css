@@ -733,3 +733,30 @@ body.is-loading { overflow: hidden; }
 @keyframes chapterCopy { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 @media (max-width: 640px) { .loader-court { width: 145px; height: 78px; } .section-in-view > .container::after { opacity: .6; } }
 @media (prefers-reduced-motion: reduce) { .site-loader { display: none; } body.is-loading { overflow: auto; } .section-in-view > .container::after, .section-in-view h2, .section-in-view p { animation: none !important; } }
+
+/* App evidence is a real carousel on every screen size. */
+.screen-gallery {
+  display: flex; width: min(1240px, calc(100% - 44px)); padding: 4px 2px 22px; gap: 18px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 2px;
+  scrollbar-width: none; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch;
+}
+.screen-gallery::-webkit-scrollbar { display: none; }
+.screen-gallery > .screen-card { flex: 0 0 clamp(250px, 23.5vw, 300px); scroll-snap-align: start; scroll-snap-stop: always; }
+.screen-gallery + .carousel-controls {
+  display: flex; width: min(1240px, calc(100% - 44px)); margin: 8px auto 0;
+  align-items: center; justify-content: space-between; gap: 18px;
+}
+.screen-gallery + .carousel-controls .carousel-status { color: rgba(255,255,255,.62); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
+.screen-gallery + .carousel-controls .carousel-actions { display: flex; gap: 9px; }
+.screen-gallery + .carousel-controls .carousel-button {
+  display: grid; width: 48px; height: 48px; padding: 0; place-items: center;
+  border: 1px solid rgba(255,255,255,.24); border-radius: 50%; background: rgba(255,255,255,.07);
+  color: var(--white); font: inherit; cursor: pointer; transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+.screen-gallery + .carousel-controls .carousel-button:hover { background: var(--lime); color: var(--ink); transform: translateY(-3px); }
+
+@media (max-width: 640px) {
+  .screen-gallery { width: 100%; padding-inline: var(--mobile-gutter); }
+  .screen-gallery > .screen-card { flex-basis: min(78vw,300px); }
+  .screen-gallery + .carousel-controls { width: calc(100% - (var(--mobile-gutter) * 2)); }
+}
