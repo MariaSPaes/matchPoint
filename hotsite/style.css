@@ -392,7 +392,7 @@ h1, h2, h3, p { margin-top: 0; }
 
 /* Product evidence, viability and academic credits */
 .app-evidence { overflow: hidden; }
-.screen-gallery { display: grid; grid-template-columns: repeat(5,1fr); gap: 17px; margin-top: 62px; }
+.screen-gallery { display: grid; grid-template-columns: repeat(4,1fr); gap: 17px; margin-top: 62px; }
 .screen-card { position: relative; min-width: 0; margin: 0; padding: 18px 14px 16px; border: 1px solid rgba(255,255,255,.16); border-radius: 24px; background: rgba(255,255,255,.045); overflow: hidden; }
 .screen-card img { display: block; width: 100%; height: 390px; object-fit: contain; filter: drop-shadow(0 18px 22px rgba(0,0,0,.24)); transition: transform .45s cubic-bezier(.22,1,.36,1); }
 .screen-card:hover img { transform: translateY(-8px) scale(1.025); }
