@@ -309,3 +309,17 @@ const setupTennisMotion = () => {
 };
 
 setupTennisMotion();
+
+const hero = document.querySelector('.hero');
+if (hero && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  hero.addEventListener('pointermove', (event) => {
+    const x = (event.clientX / window.innerWidth - .5) * 2;
+    const y = (event.clientY / window.innerHeight - .5) * 2;
+    hero.style.setProperty('--hero-pointer-x', `${(x * 10).toFixed(2)}px`);
+    hero.style.setProperty('--hero-pointer-y', `${(y * 7).toFixed(2)}px`);
+  });
+  hero.addEventListener('pointerleave', () => {
+    hero.style.setProperty('--hero-pointer-x', '0px');
+    hero.style.setProperty('--hero-pointer-y', '0px');
+  });
+}
